@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+
+<link href="/EMS_MODEL/css/main.css" rel="stylesheet" type="text/css">
+<link href="/EMS_MODEL/css/exCSS.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body {
+	background-image: url(/EMS_MODEL/pic/login_02.jpg);
+	background-repeat: repeat-x;
+}
+</style>
+<script language='javascript' type='text/javascript'>
+var request = false;
+try {request = new XMLHttpRequest();} 
+catch (trymicrosoft) {
+try{request = new ActiveXObject('Msxml2.XMLHTTP');}
+catch (othermicrosoft) {
+try{request = new ActiveXObject('Microsoft.XMLHTTP');}
+catch (failed){request = false;}}}
+
+function QueryData()
+{
+	var url = '/cgi-bin/GInfo.dll?ajxEmsQueryTrans&w=au-express';
+	request.open('GET', url, true);
+	request.onreadystatechange = QueryDataOK;
+	request.send(null);
+	}
+
+function QueryDataOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+var response = request.responseText.split('|');
+Data1.innerHTML =response[24];
+var iIn=parseFloat(response[1])+parseFloat(response[2]);
+var iOut=parseFloat(response[4])+parseFloat(response[6]);
+Data2.innerHTML =iIn-iOut;
+Data3.innerHTML =response[10];
+Data4.innerHTML =response[9];
+
+return ;}}}
+</script>
+</head>
+
+<body  onload="QueryData();">
+<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left">
+        <div id="logo"></div>
+        <div id="tel"><span  id="Data1"></span>,欢迎您！</div>
+          <div id="companyNews"><table width="250" border="0" cellspacing="5" cellpadding="0">
+                        <tr>
+                          <td width="130" align="right">我的账户余额： </td>
+                          <td align="left"><span class="forange" id="Data2"></span></td>
+                </tr>
+                        <tr>
+                          <td align="right">待交款订单金额：</td>
+                          <td align="left"><span class="forange" id="Data3"></span></td>
+                </tr>
+                        <tr>
+                          <td align="right">等待付款的快件：</td>
+                          <td align="left"><span class="forange" id="Data4"></span></td>
+                </tr>
+            </table></div>
+            <div id="wx"></div>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" id="tdline_T"><table width="1053" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="53" align="right">&nbsp;</td>
+    <td width="53" align="right"><img src="/EMS_MODEL/pic/ic7.png" width="18" height="21" /></td>
+    <td width="96" align="right"><table width="89" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td  align="left"><a href="/cgi-bin/GInfo.dll?MemStart&amp;w=au-express" target='main' class="f12orange">会员首页</a></td>
+        </tr>
+    </table></td>
+    <td width="851" align="left"><div id="navBox">
+<div id="nav">
+<ul class="menu" id="menu">
+<li  id="slip">|</li>
+<li><a href="/cgi-bin/GInfo.dll?RecPreInputSetForm&w=au-express" class="menulink" target='main'>网上录单</a></li>
+<li  id="slip">|</li>
+<li><a href="/EMS_MODEL/CN/S/upload.htm" class="menulink" target='main'>批量导入</a></li>
+<li  id="slip">|</li>
+<li><a href="/cgi-bin/GInfo.dll?EmmisMemoForm&w=au-express" class="menulink" target='main'>跟踪快件</a></li>
+<li  id="slip">|</li>
+<li><a href="/cgi-bin/GInfo.dll?EmmisListForm&w=au-express" class="menulink" target='main'>帐单查询</a></li>
+
+</ul>
+</div>
+</div></td>
+  </tr>
+</table></td></tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

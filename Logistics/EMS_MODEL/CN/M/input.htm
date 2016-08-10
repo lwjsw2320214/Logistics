@@ -1,0 +1,1610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>[{客户账号}]客户业务单录入</title>
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="/EMS_MODEL/css/base.css" />
+<script type="text/javascript" src="/EMS_MODEL/js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="/EMS_MODEL/js/dsdialog.js"></script>
+
+<style>
+.tit{font-size:14px;line-height:20px;font-weight:800;color:#008000}
+.button1{font-size:12px;Height:13pt;clip:rect();
+border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;
+border-left-width: 1px;border-top-style: solid;
+border-right-style: solid;border-bottom-style: solid;border-left-style: solid;
+BACKGROUND-COLOR:#E7E7E7;border-top-color:#CCCCCC;border-left-color: #CCCCCC;}
+.sblue{
+	color: #06C;
+	cursor: pointer
+}
+#tbBG {
+	line-height: 22px;
+	margin-bottom: 5px;
+}
+#table1 {
+	padding: 3px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	color: #87B4C9;
+}
+.f12blue {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #87B4C9;
+	text-decoration: underline;
+}
+.f12blue3 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #87b4c9;
+	text-decoration: none;
+}
+
+
+.myinput{
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	width: 200px;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+}
+.input1 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 266px;
+}
+.input2 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 18px;
+	line-height: 18px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 100px;
+}
+.input3 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 105px;
+}
+.f12blue3 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #61A6CB;
+	text-decoration: none;
+	line-height: 20px;
+}
+
+.myinput2 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 180px;
+}
+#txtKind {
+	color: #444444;
+	text-align: left;
+	height: 33px;
+	font-size: 14px;
+	padding-left: 20px;
+	line-height: 33px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.f12blue2 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #005EA7;
+	text-decoration: none;
+	cursor: pointer;
+}
+.btn{
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	font-size: 14px;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-right: 2px;
+	padding-top: 3px;
+	padding-right: 12px;
+	padding-bottom: 3px;
+	padding-left: 12px;
+	margin-left: 2px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}.btn:focus,.btn:active:focus,.btn.active:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.btn:hover,.btn:focus{color:#333;text-decoration:none}.btn:active,.btn.active{
+	outline: 0;
+	background-image: none;
+	-webkit-box-shadow: inset 0px 3px 5px rgba(0,0,0,.125);
+	box-shadow: inset 0px 3px 5px rgba(0,0,0,.125)
+}.btn.disabled,.btn[disabled],fieldset[disabled] .btn{cursor:not-allowed;pointer-events:none;opacity:.65;filter:alpha(opacity=65);-webkit-box-shadow:none;box-shadow:none}.btn-primary{
+	color: #fff;
+	background-color: #0274C8;
+	border-top-color: #444444;
+	border-right-color: #444444;
+	border-bottom-color: #444444;
+	border-left-color: #444444;
+}.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{
+	color: #fff;
+	background-color: #0283E1;
+	border-color: #000
+}.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{background-image:none}.btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active{background-color:#428bca;border-color:#357ebd}.btn-primary .badge{color:#428bca;background-color:#fff}
+#tbLine {
+	border: 1px dashed #b7d2df;
+	background-color: #f8fbfc;
+}
+td {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.f12gray {
+	color: #61A6CB;
+	text-decoration: none;
+	line-height: 20px;
+}
+ａ.f12gray:visited {
+	color: #999999;
+	text-decoration: none;
+}
+ａ.f12gray:hover {
+	color: #999999;
+	text-decoration: underline;
+}
+.fred {
+	color: #FF0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.mytextarea {
+	width: 264px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	border-left-color: #9dc2d4;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+.myMemo {
+	width: 260px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	border-left-color: #9dc2d4;
+}
+
+.bt_save {
+	background-image: url(/orderPic/bt_save.jpg);
+	background-repeat: no-repeat;
+	height: 35px;
+	width: 149px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+
+	cursor: pointer;
+}
+.bt_prt {
+	background-image: url(/orderPic/bt_prt.jpg);
+	background-repeat: no-repeat;
+	height: 35px;
+	width: 149px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.myinput3 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 18px;
+	line-height: 18px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 50px;
+}
+.myinput33 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 14px;
+	line-height: 14px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 30px;
+}
+.intro {
+	line-height: 1.8em;
+}
+ .myinput4 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	background-color:#F0F0F0;
+	width: 150px;
+}
+.cydz{overflow:hidden; margin-bottom:7px;border:#B7D2DF dotted 1px; color:#87B4C9;background:#F8FBFC;padding:5px 0 5px 10px;width:80%}
+
+.cydz li{width:99%;display:block;  margin-right:7px;  border:#F8FBFC dotted 1px; color:#87B4C9; padding-left:2px; overflow:hidden;}
+.cydz li.xz{color:#F8AA27; background:#FFFAEE; border:#F9BA53 dotted 1px}
+.cydz .remark{color:Gray;}
+.cydz td{padding:0px;}
+
+#table1 td {
+	color: #87B4C9;
+}
+.f12B {
+	font-weight: bold;
+	color: #444444;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#txtGray {
+	color: #61A6CB;
+	line-height: 18px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.myinput1 {
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 260px;
+}
+.err {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 1px solid #C30;
+	background-image: url(/EMS_MODEL/pic/err.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+	line-height: 20px;
+	height: 20px;
+	width: 105px;
+}
+
+</style>
+<script language='javascript' type='text/javascript'> 
+var iGoodsItem=0;
+var acGoods=new Array();
+var aiQuant=new Array();
+var afPrice=new Array();
+var acCodeA=new Array();
+var acCodeB=new Array();
+var acCodeC=new Array();
+var acAlias=new Array();
+var afCustom=new Array();
+var afRate=new Array();
+
+var request = false;
+try {request = new XMLHttpRequest();} 
+catch (trymicrosoft) {
+try{request = new ActiveXObject('Msxml2.XMLHTTP');}
+catch (othermicrosoft) {
+try{request = new ActiveXObject('Microsoft.XMLHTTP');}
+catch (failed){request = false;}}}
+
+function FillEmskind()
+ {	
+	if(x_nEmsKind<=0) return;
+ 	var str="<select name='cemskind' id='cemskind' onchange='QueryPrice();'><option value='' selected>--请选择--</option>";
+	for(var i=0;i<x_nEmsKind;i++)
+		{
+			str+="<option value='";
+			str+=x_acEmsKind[i];
+			str+="'>";
+			str+=x_acEmsKindd[i];
+			str+="</option>";
+			
+		}
+	
+	str+="</select>";
+	o = document.getElementById("oemskind");
+	if(o == null) return ;
+	o.innerHTML=str;
+	
+ }
+ 
+ function addNewAddress(){
+	var bOk=true;
+	var strErr="";
+	var url ="/cgi-bin/GInfo.dll?ajxEmsSRISet&w=au-express&ikind=0";
+	if(theForm.creceiver.value=='')
+	{strErr+='没有填写收件人姓名\r\n';bOk=false;}
+	if(theForm.caddr.value=='')
+	{strErr+='没有填写收件人地址\r\n';bOk=false;}
+	if(theForm.cphone.value=='')
+	{strErr+='没有填写收件人电话\r\n';bOk=false;}
+	if(theForm.cpostcode.value=='')
+	{strErr+='没有填写收件人邮编\r\n';bOk=false;}
+	if(theForm.ccountry.value=='')
+	{strErr+='没有填写收件人国家\r\n';bOk=false;}
+	if(theForm.ccity.value=='')
+	{strErr+='没有填写收件人城市\r\n';bOk=false;}
+	if(!bOk) {alert(strErr);bOk=false; return;}
+	url+="&cname="+theForm.creceiver.value;
+	url+="&cidcard="+theForm.cremail.value;
+	url+="&cunit="+theForm.cunitname.value+Math.round(Math.random()*1000000);
+	url+="&caddr="+theForm.caddr.value;
+	url+="&cphone="+theForm.cphone.value;
+	url+="&cpost="+theForm.cpostcode.value;
+	url+="&cemail="+theForm.cremail.value;
+	url+="&ccity="+theForm.ccity.value;
+	url+="&cprovince="+theForm.cprovince.value;
+	url+="&ccountry="+theForm.ccountry.value;
+	
+	request.open("GET", url, true);
+	request.onreadystatechange = addNewAddressOK;
+	request.send(null);
+	}
+	
+function addNewAddressOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+var response = request.responseText.split("|");
+if(response[0]<0) {alert("收件人身份证号重复，请重新填写");return ;}
+QueryAddrList();
+return ;
+}}}
+
+function delAddress(iid){
+ 
+ var url ="/cgi-bin/GInfo.dll?ajxEmsSRIDel&w=au-express&iid="+iid;  
+ request.open("GET", url, true);
+ request.onreadystatechange = delAddressOK;
+ request.send(null);
+ }
+function delAddressOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+var response = request.responseText.split("|");
+if(response[0]<=0) return ;
+QueryAddrList();
+return ;
+}}}
+
+function QueryAddrList(){
+var url = "/cgi-bin/GInfo.dll?ajxEmsSRIList&w=au-express&nc=10&ikind=100&ntype=1";
+request.open("GET", url, true);
+request.onreadystatechange = QueryAddrListOK;
+request.setRequestHeader("If-Modified-Since","0");
+request.send(null);}
+
+function QueryAddrListOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+eval("var res = " +request.responseText);
+if (res.ReturnValue!=100) { addrList.innerHTML="未检索到结果。"; return; };
+ var str='<table width="100%" border="0" cellspacing="0" cellpadding="2">';
+ for(var i=0;i<res.iTotalRec;i++)
+ {
+   str+='<tr><td width="4%"><input type="radio" name="btnAddr" onclick="javascript:QueryEmsSRIGet('+res.RecList[i].iID;
+   str+=')"></td><td width="80%" align="left">（';
+   str+=res.RecList[i].cName+" 收）　"+res.RecList[i].cAddr+"　"+res.RecList[i].cPhone;
+   str+='　</td><td align="center">';
+   str+='<a href="javascript:delAddress(';
+   str+=res.RecList[i].iID;
+   str+=')';
+   str+='"　class="sblue">[删除]</a>';
+   str+='</td></tr>';
+ }
+    str+='</table>';
+ addrList.innerHTML=str;
+return ;}}}
+
+//---------------------------------
+function QueryEmsSRIGet(iid){
+var url = "/cgi-bin/GInfo.dll?ajxEmsSRIGet&w=au-express&ikind=0&iid="+iid;
+request.open("GET", url, true);
+request.onreadystatechange = QueryEmsSRIGetOK;
+request.send(null);}
+
+function QueryEmsSRIGetOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+var response = request.responseText.split("|");
+theForm.creceiver.value=response[1].replace(/&#124;/g,"|");
+var str=response[2].replace(/&#124;/g,"|");
+var n=str.length;
+if(n>0) theForm.cunitname.value=str.substring(0,n-6);
+theForm.creceiver.value=response[1].replace(/&#124;/g,"|");
+theForm.caddr.value=response[3].replace(/&#124;/g,"|");
+theForm.cphone.value=response[4].replace(/&#124;/g,"|");
+theForm.cpostcode.value=response[8].replace(/&#124;/g,"|");
+theForm.cremail.value=response[10].replace(/&#124;/g,"|");
+theForm.cby1.value=response[11].replace(/&#124;/g,"|");
+theForm.crsms.value=response[9].replace(/&#124;/g,"|");
+theForm.ccity.value=response[7].replace(/&#124;/g,"|");
+theForm.cprovince.value=response[6].replace(/&#124;/g,"|");
+theForm.ccountry.value=response[5].replace(/&#124;/g,"|");
+return ;}}}
+//----------------------------------
+
+function GO(o){
+if(event.keyCode==13){ event.keyCode=9;o.focus();}}
+var bLast = false;
+var strBase='/cgi-bin/GInfo.dll?';
+var strVali='&w=au-express';
+
+var strPayDir='PP';
+var iLanguage=0;
+var strSender='';
+var strNum='';
+var strRNo='';
+var iItemType=1;
+var iPayWay=0;
+var strEmsKind='';
+var strDes='';
+var iItem=1;
+var fWeight=0;
+var iLong=0;
+var iWidth=0;
+var iHeight=0;
+var strGoods='';
+var strCodea='';
+var iQuantity=1;
+var fPrice=0;
+var strMoney='CNY';
+var strPack='';
+var strTransNote='';
+var fDValue=0;
+var fIValue=0;
+var fGoods=0;
+var fGoodsC=0;
+var strReceiver='';
+var strUnitName='';
+var strAddr='';
+var strPhone='';
+var strPostCode='';
+var strCountry='';
+var strProvince='';
+var strCity='';
+var strMemo='';
+var strSUnitName='';
+var strSAddr='';
+var strSCity='';
+var strSProvince='';
+var strSCountry='';
+var strSPostCode='';
+var strSPhone='';
+var strSEMail='';
+var strSSms='';
+var strREMail='';
+var strRSms='';
+
+
+function QueryDes(){
+var url = "/cgi-bin/GInfo.dll?ajxEmsQueryDes&ntype=1&cdes="+theForm.cdes.value;
+request.open("GET", url, true);
+request.onreadystatechange = QueryDesOK;
+request.send(null);}
+
+
+function QueryDesOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+if(request.responseText=="-") return;
+eval("var res = " +request.responseText);
+if (res.iArea<0) return ;
+iLanguage=res.nLan;
+theForm.cdes.value=res.cDes;
+if(res.cPostCode!="") theForm.cpostcode.value=res.cPostCode;
+if(res.cProvince!="") theForm.cprovince.value=res.cProvince;
+theForm.ccountry.value=res.cCountry;
+if(res.cCity!="") theForm.ccity.value=res.cCity;
+return ;}}}
+
+function QuerySender(){
+if(theForm.csender.value=='') return;
+var url='/cgi-bin/GInfo.dll?ajxEmsQuerySender'+strVali+'&csnd='+theForm.csender.value;
+request.open('GET', url, true);
+request.onreadystatechange = QuerySenderOK;
+request.send(null);}
+function QuerySenderOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+var response = request.responseText.split("|");
+if(parseInt(response[0],10) <= 0) return ;
+theForm.csunitname.value=response[1].replace(/&#124;/g,"|");
+theForm.csaddr.value=response[3].replace(/&#124;/g,"|")+response[4].replace(/&#124;/g,"|")+response[5].replace(/&#124;/g,"|")+response[2].replace(/&#124;/g,"|");
+theForm.cscountry.value=response[3].replace(/&#124;/g,"|");
+theForm.csprovince.value=response[4].replace(/&#124;/g,"|");
+theForm.cscity.value=response[5].replace(/&#124;/g,"|");
+theForm.csphone.value=response[6].replace(/&#124;/g,"|");
+theForm.cspostcode.value=response[7].replace(/&#124;/g,"|");
+theForm.csemail.value=response[8].replace(/&#124;/g,"|");
+theForm.cssms.value=response[9].replace(/&#124;/g,"|");
+theForm.creceiver.focus();
+return ;}}}
+function QueryReceiver(){
+if(theForm.creceiver.value=='') return;
+var url='/cgi-bin/GInfo.dll?ajxEmsQueryReceiver'+strVali+'&crev='+theForm.creceiver.value;
+request.open('GET', url, true);
+request.onreadystatechange = QueryReceiverOK;
+request.send(null);}
+function QueryReceiverOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+var response = request.responseText.split("|");
+if(parseInt(response[0],10) <= 0) return ;
+var str=response[1].replace(/&#124;/g,"|");
+var n=str.length;
+if(n>0) theForm.cunitname.value=str.substring(0,n-6);
+theForm.caddr.value=response[2].replace(/&#124;/g,"|");
+theForm.ccountry.value=response[3].replace(/&#124;/g,"|");
+theForm.cprovince.value=response[4].replace(/&#124;/g,"|");
+theForm.ccity.value=response[5].replace(/&#124;/g,"|");
+theForm.cphone.value=response[6].replace(/&#124;/g,"|");
+theForm.cpostcode.value=response[7].replace(/&#124;/g,"|");
+theForm.cremail.value=response[8].replace(/&#124;/g,"|");
+theForm.crsms.value=response[9].replace(/&#124;/g,"|");
+theForm.cgoods.focus();
+return ;}}}
+function QueryPrice(){
+//btnQueryPrice.innerHTML = '';
+thePrice.innerHTML = '<font color=red>正在查询报价...</font>';
+var i=theForm.iitemtype.value;
+var url='/cgi-bin/GInfo.dll?ajxEmsQueryPrice'+strVali+'&cdes='+theForm.cdes.value+'&cemskind='+theForm.cemskind.value+'&itype='+i+'&fweight='+theForm.fweight.value+'&il='+theForm.ilong.value+'&iw='+theForm.iwidth.value+'&ih='+theForm.iheight.value;
+request.open('GET', url, false);
+request.onreadystatechange = QueryPriceOK;
+request.send(null);}
+function QueryPriceOK(){
+//btnQueryPrice.innerHTML="<button type='button' value='查询报价...' class='btn btn-primary' onclick='QueryPrice();'>查询报价...</button>";
+if (request.readyState == 4){
+if (request.status == 200){
+if(request.responseText.charAt(0) == '-'){
+thePrice.innerHTML=' <font color=red>没有可用报价信息。</font>';return ;}
+thePrice.innerHTML='预估运费为： <font color=red>'+request.responseText+'</font> 元。';
+theForm.famount.value=request.responseText;
+return ;}}}
+
+function QueryNum(){
+theNum.innerHTML = '<font color=red>正在查询运单...</font>';
+var url = '/cgi-bin/GInfo.dll?ajxEmsQueryNum'+strVali+'&nver=4&cnum='+theForm.cnum.value;
+request.open('GET', url, true);
+request.onreadystatechange = QueryNumOK;
+request.send(null);}
+
+function QueryNumOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+eval("var res = " +request.responseText);
+if(res.ReturnValue < 0){
+theNum.innerHTML=' 新运单！';return ;}
+if(res.ReturnValue == 0){
+theNum.innerHTML=' 新运单！';return ;}
+if(res.ReturnValue == 2){
+theNum.innerHTML=' 运单已处理！';return ;}
+//DispSender();
+theNum.innerHTML=' 记录修改！';
+if(res.GoodsList!=null) iGoodsItem=res.GoodsList.length;
+theForm.iid.value = res.iID;
+theForm.iitem.value=res.iItem;
+theForm.iitemtype.value=res.nItemType;
+theForm.ipayway.value=res.siPayWay;
+theForm.iquantity.value=res.iQuantity;
+theForm.ilong.value=res.iLong;
+theForm.iwidth.value=res.iWidth;
+theForm.iheight.value=res.iHeight;
+theForm.fweight.value=res.fWeight;
+theForm.fprice.value=res.fPrice;
+if(iGoodsItem==1) 
+{
+ theForm.info_g.value=res.cGoods;
+ theForm.info_a.value=res.cGoodsA;
+ theForm.info_ca.value=res.cGCodeA;
+ theForm.info_cb.value=res.cGCodeB;
+ theForm.info_cc.value=res.cGCodeC;
+ theForm.info_q.value=res.iQuantity;
+ theForm.info_p.value=res.fPrice;
+ acGoods[0]=res.cGoods;
+ acAlias[0]=res.cGoodsA;
+ aiQuant[0]=res.iQuantity;
+ afPrice[0]=res.fPrice;
+ acCodeA[0]=res.cGCodeA;
+ acCodeB[0]=res.cGCodeB;
+ acCodeC[0]=res.cGCodeC;
+ afCustom[0]=res.fGCustom;
+ afRate[0]=res.fGCRate;
+}
+
+theForm.fgoods.value=res.fGoods;
+theForm.fgoodsc.value=res.fGoodsc;
+theForm.fdvalue.value=res.fDValue;
+theForm.fivalue.value=res.fIValue;
+theForm.caddr.value=res.cRAddr;
+theForm.ccity.value=res.cRCity;
+theForm.ccountry.value=res.cRCountry;
+theForm.cdes.value=res.cDes;
+theForm.cemskind.value=res.cEmsKind;
+theForm.cgoods.value=res.cGoods;
+theForm.cmemo.value=res.cMemo;
+theForm.cpack.value=res.cPacking;
+theForm.cphone.value=res.cRPhone;
+theForm.cpostcode.value=res.cRPostcode;
+theForm.cprovince.value=res.cRProvince;
+theForm.csender.value=res.cSender;
+theForm.ctransnote.value=res.cTransNote;
+theForm.cunitname.value=res.cRUnit;
+theForm.cmoney.value=res.cMoney;
+theForm.creceiver.value=res.cReceiver;
+theForm.csunitname.value=res.cSUnit;
+theForm.csaddr.value=res.cSAddr;
+theForm.cscity.value=res.cSCity;
+theForm.csprovince.value=res.cSProvince;
+theForm.cscountry.value=res.cSCountry;
+theForm.csphone.value=res.cSPhone;
+theForm.cspostcode.value=res.cSPostcode;
+theForm.ilanguage.value=res.nLanguage;
+theForm.cpaydir.value=res.cPayDir;
+theForm.famount.value=res.fAmount;
+theForm.crno.value=res.cRNo;
+theForm.cssms.value=res.cSSms;
+theForm.csemail.value=res.cSEMail;
+theForm.cremail.value=res.cREMail;
+theForm.crsms.value=res.cRSms;
+theForm.cby1.value=res.cBy1;
+theForm.cby2.value=res.cBy2;
+theForm.cby3.value=res.cBy3;
+theForm.cby4.value=res.cBy4;
+theForm.cby5.value=res.cBy5;
+theForm.calias.value=res.cGoodsA;
+theForm.ccodea.value=res.cGCodeA;
+theForm.ccodeb.value=res.cGCodeB;
+theForm.ccodec.value=res.cGCodeC;
+theForm.fcustom.value=res.fGCustom;
+theForm.frate.value=res.fGCRate;
+theForm.faget.value=res.faGet;
+theForm.fasafe.value=res.faSafe;
+theForm.fapack.value=res.faPack;
+theForm.faother.value=res.faOther;
+theForm.facheck.value=res.faCheck;
+theForm.faremote.value=res.faRemote;
+theForm.faby.value=res.faBy;
+
+if(res.GoodsList!=null)
+{	for(i=0;i<iGoodsItem;i++)
+	{	
+		acGoods[i]=res.GoodsList[i].cxGoods;
+		acAlias[i]=res.GoodsList[i].cxGoodsA;
+		aiQuant[i]=res.GoodsList[i].ixQuantity;
+		afPrice[i]=res.GoodsList[i].fxPrice;
+		acCodeA[i]=res.GoodsList[i].cxGCodeA;
+		acCodeB[i]=res.GoodsList[i].cxGCodeB;
+		acCodeC[i]=res.GoodsList[i].cxGCodeC;
+		afCustom[i]=res.GoodsList[i].fxGCustom;
+		afRate[i]=res.GoodsList[i].fxGCRate;
+		
+	}
+}
+UpdateGoodsInfo();
+theTitle.innerHTML = '<font color=red>【**{客户账号}**】修改预录业务记录</font>';
+btnDelete.innerHTML="<button type='button' value='删除本条' class='btn btn-primary' onclick='DeleteIt()'>删除本条</button>";
+return ;}}}
+function PartClear(bAdd){
+bLast=bAdd;
+btnDelete.innerHTML = '';
+strPayDir=theForm.cpaydir.value;
+iLanguage=theForm.ilanguage.value;
+strSender=theForm.csender.value;
+strNum=theForm.cnum.value;
+strRNo=theForm.crno.value;
+iItemType=theForm.iitemtype.value;
+iPayWay=theForm.ipayway.value;
+strEmsKind=theForm.cemskind.value;
+strDes=theForm.cdes.value;
+iItem=theForm.iitem.value;
+fWeight=theForm.fweight.value;
+iLong=theForm.ilong.value;
+iWidth=theForm.iwidth.value;
+iHeight=theForm.iheight.value;
+strGoods=theForm.cgoods.value;
+strCodea=theForm.ccodea.value;
+iQuantity=theForm.iquantity.value;
+fPrice=theForm.fprice.value;
+strMoney=theForm.cmoney.value;
+strPack=theForm.cpack.value;
+strTransNote=theForm.ctransnote.value;
+fDValue=theForm.fdvalue.value;
+fIValue=theForm.fivalue.value;
+fGoods=theForm.fgoods.value;
+fGoodsC=theForm.fgoodsc.value;
+strReceiver=theForm.creceiver.value;
+strUnitName=theForm.cunitname.value;
+strAddr=theForm.caddr.value;
+strPhone=theForm.cphone.value;
+strPostCode=theForm.cpostcode.value;
+strCountry=theForm.ccountry.value;
+strProvince=theForm.cprovince.value;
+strCity=theForm.ccity.value;
+strMemo=theForm.cmemo.value;
+strSEMail=theForm.csemail.value;
+strSSms=theForm.cssms.value;
+strREMail=theForm.cremail.value;
+strRSms=theForm.crsms.value;
+strSUnitName=theForm.csunitname.value;
+strSAddr=theForm.csaddr.value;
+strSPhone=theForm.csphone.value;
+strSPostCode=theForm.cspostcode.value;
+strSCountry=theForm.cscountry.value;
+strSProvince=theForm.csprovince.value;
+strSCity=theForm.cscity.value;
+theForm.ilanguage.value = 0;
+theForm.cpaydir.value ='PP';
+theForm.iid.value = 0;
+theForm.iitem.value=1;
+theForm.iquantity.value=1;
+theForm.ilong.value='';
+theForm.iwidth.value='';
+theForm.iheight.value='';
+theForm.fweight.value='';
+theForm.famount.value='';
+theForm.fprice.value='';
+theForm.fgoods.value='';
+theForm.fgoodsc.value='';
+theForm.fdvalue.value='';
+theForm.fivalue.value='';
+theForm.caddr.value='';
+theForm.ccity.value='';
+theForm.ccountry.value='';
+theForm.cdes.value='';
+theForm.cgoods.value='';
+theForm.ccodea.value='';
+theForm.cmemo.value='';
+theForm.cpack.value='';
+theForm.cphone.value='';
+theForm.cpostcode.value='';
+theForm.cprovince.value='';
+theForm.csender.value='';
+theForm.ctransnote.value='';
+theForm.cunitname.value='';
+theForm.cnum.value='';
+theForm.crno.value='';
+theForm.creceiver.value='';
+theForm.csemail.value='';
+theForm.cssms.value='';
+theForm.cremail.value='';
+theForm.crsms.value='';
+theForm.csunitname.value='';
+theForm.csaddr.value='';
+theForm.cscity.value='';
+theForm.cscountry.value='';
+theForm.csprovince.value='';
+theForm.csphone.value='';
+theForm.cspostcode.value='';
+theTitle.innerHTML = '【**{客户账号}**】客户业务单录入';
+thePrice.innerHTML = '';
+theNum.innerHTML = '';
+theForm.cby1.value='';
+iGoodsItem=0;
+theGoodsInfo.innerHTML="";
+GoodsItemAdd('',1,1,'','','',0,0,0);
+}
+
+function FillSender(){
+theForm.csphone.value=csPhone;
+theForm.cspostcode.value=csPostCode;
+
+theForm.csemail.value=csSEMail;
+theForm.cssms.value=csSSms;
+if(iLanguage < 2){
+theForm.csunitname.value=csUnitName;
+theForm.csaddr.value=csAddr;
+theForm.cscity.value=csCity;
+theForm.cscountry.value=csCountry;
+theForm.csprovince.value=csProvince;
+theForm.csender.value=csSign;}else{
+theForm.csunitname.value=csUnitNameE;
+theForm.csaddr.value=csAddrE;
+theForm.cscity.value=csCityE;
+theForm.cscountry.value=csCountryE;
+theForm.csprovince.value=csProvinceE;
+theForm.csender.value=csSignE;}}
+
+function pre_submit(){
+var strErr='请更正如下资料后再提交：\r\n-------------------\r\n';
+var bOk=true;
+
+	var og=document.getElementsByName('info_g');
+	var oa=document.getElementsByName('info_a');
+	var oca=document.getElementsByName('info_ca');
+	var oq=document.getElementsByName('info_q');
+	var op=document.getElementsByName('info_p');
+	if(og == null || oq == null ||op == null||oca == null) return;
+	var strGoods=og[0].value;
+	var tquantity=0;
+	var tprice=0;
+	var tprice=parseFloat(op[0].value);
+	 if(iGoodsItem==1)
+ {
+  theForm.cgoods.value=og[0].value;
+  theForm.calias.value=oa[0].value;
+  theForm.ccodea.value=oca[0].value;
+  theForm.iquantity.value=oq[0].value;
+  theForm.fprice.value=op[0].value;
+  //if(theForm.iquantity.value==""||theForm.iquantity.value==0||!IsNum(oq[0].value)) {strErr+='请正确填写物品数量\r\n';bOk=false;} 
+ // if(theForm.fprice.value==""||theForm.fprice.value==0||!IsNum(op[0].value)) {strErr+='请正确填写物品单价\r\n';bOk=false;}
+ }
+ else{
+  for(j=1;j<iGoodsItem;j++)
+   {
+	   if(og[j].value!="") 
+			{
+				strGoods+=","+og[j].value;
+				//if(!IsNum(op[j].value)||!IsNum(oq[j].value)||oq[j].value==0||op[j].value==0) {strErr+='请正确填写物品数量或单价\r\n';bOk=false;}
+				
+			}
+   
+   }
+   theForm.cgoods.value = strGoods;
+ }
+ if(iGoodsItem>1&&theForm.info_g[1].value=="")
+ {
+  for(i=1;i<iGoodsItem;i++)
+  {
+   theForm.info_g[i].value="";
+   theForm.info_a[i].value="";
+   theForm.info_ca[i].value="";
+   theForm.info_q[i].value=1;
+   theForm.info_p[i].value=1;
+  }
+ 
+ }
+if(theForm.cgoods.value.length>254)
+{strErr+='因“物品描述”项字数过多：请减少邮寄物品。请简化物品描述。\r\n';bOk=false;}
+if(theForm.cemskind.value=='')
+{strErr+='没有选择网络\r\n';bOk=false;}
+if(theForm.cdes.value.length<1)
+{strErr+='没有填写目的地\r\n';bOk=false;}
+if(theForm.cgoods.value.length<1)
+{strErr+='没有填写物品描述\r\n';bOk=false;}
+if(theForm.caddr.value.length<1)
+{strErr+='没有填写收件人详细地址\r\n';bOk=false;}
+if(theForm.creceiver.value.length<1)
+{strErr+='没有填写收件人姓名\r\n';bOk=false;}
+if(theForm.ccountry.value.length<1)
+{strErr+='没有填写收件人国家\r\n';bOk=false;}
+if(theForm.ccity.value.length<1)
+{strErr+='没有填写收件人城市\r\n';bOk=false;}
+if(theForm.cpostcode.value.length<1)
+{strErr+='没有填写收件人邮编\r\n';bOk=false;}
+if(theForm.cphone.value.length<1)
+{strErr+='没有填写收件人电话\r\n';bOk=false;}
+ for(var j=0;j<iGoodsItem;j++)
+   {
+	   if(og[j].value!=""&&(!IsNum(oq[j].value)||!IsNum(op[j].value))) 
+			{
+				strErr+='请正确填写物品数量或单价\r\n';bOk=false;
+			}
+   
+   }
+if(!bOk) alert(strErr);
+return bOk;
+}
+
+function LastValue(){
+theNum.innerHTML='';
+thePrice.innerHTML='';
+theForm.iitem.value=iItem;
+theForm.ilanguage.value=iLanguage;
+theForm.iquantity.value=iQuantity;
+theForm.ilong.value=iLong;
+theForm.iwidth.value=iWidth;
+theForm.iheight.value=iHeight;
+theForm.fweight.value=fWeight;
+theForm.fprice.value=fPrice;
+theForm.fgoods.value=fGoods;
+theForm.fgoodsc.value=fGoodsC;
+theForm.fdvalue.value=fDValue;
+theForm.fivalue.value=fIValue;
+theForm.csunitname.value=strSUnitName;
+theForm.csaddr.value=strSAddr;
+theForm.cscity.value=strSCity;
+theForm.cscountry.value=strSCountry;
+theForm.csphone.value=strSPhone;
+theForm.cspostcode.value=strSPostCode;
+theForm.csprovince.value=strSProvince;
+theForm.csemail.value=strSEMail;
+theForm.cssms.value=strSSms;
+theForm.cremail.value=strREMail;
+theForm.crsms.value=strRSms;
+theForm.caddr.value=strAddr;
+theForm.ccity.value=strCity;
+theForm.ccountry.value=strCountry;
+theForm.cdes.value=strDes;
+theForm.cgoods.value=strGoods;
+theForm.ccodea.value=strCodea;
+theForm.cmemo.value=strMemo;
+theForm.cpack.value=strPack;
+theForm.cmoney.value=strMoney;
+theForm.cphone.value=strPhone;
+theForm.cpostcode.value=strPostCode;
+theForm.cprovince.value=strProvince;
+theForm.csender.value=strSender;
+theForm.ctransnote.value=strTransNote;
+theForm.cunitname.value=strUnitName;
+}
+function DeleteIt(){
+btnDelete.innerHTML = '<font color=red>正在删除...</font>';
+document.all['theNote'].src = strBase+'RecPreInputDel'+strVali+'&iid='+theForm.iid.value;}
+
+
+function GoodsItemAdd(cg,iq,fp,ca,cca,ccb,ccc,fct,fcr){
+	
+	if(iGoodsItem>0)
+	{	
+		var og=document.getElementsByName('info_g');
+		var oq=document.getElementsByName('info_q');
+		var op=document.getElementsByName('info_p');
+		var oa=document.getElementsByName('info_a');
+		var oca=document.getElementsByName('info_ca');
+		var ocb=document.getElementsByName('info_cb');
+		var occ=document.getElementsByName('info_cc');
+		var oct=document.getElementsByName('info_ct');
+		var ocr=document.getElementsByName('info_cr');
+		if(og == null || oq == null ||op == null) return;
+		 
+		var n=0;
+		for(i=0;i<iGoodsItem;i++)
+		{
+		acGoods[n]=og[i].value;
+		aiQuant[n]=oq[i].value;
+		afPrice[n]=op[i].value;
+		acAlias[n]=oa[i].value;
+		acCodeA[n]=oca[i].value;
+		acCodeB[n]=ocb[i].value;
+		acCodeC[n]=occ[i].value;
+		afCustom[n]=oct[i].value;
+		afRate[n]=ocr[i].value;
+			n++;
+			}
+	}
+
+acGoods[iGoodsItem]=cg;
+aiQuant[iGoodsItem]=iq;
+afPrice[iGoodsItem]=fp;
+acAlias[iGoodsItem]=ca;
+acCodeA[iGoodsItem]=cca;
+acCodeB[iGoodsItem]=ccb;
+acCodeC[iGoodsItem]=ccc;
+afCustom[iGoodsItem]=fct;
+afRate[iGoodsItem]=fcr;
+iGoodsItem++;
+UpdateGoodsInfo();
+}
+
+function UpdateGoodsInfo(){
+var str='<table border=0 width=100% cellspacing=1 bgcolor=#EFEFEF>';
+str += '<tr><td align=left><span class="fred">* </span>中文品名</td><td width=100 align=left><span class="fred">* </span>英文品名</td><td width=100 align=left><span class="fred">* </span>物品数量</td>';
+str += '<td width=100 align=left><span class="fred">* </span>单价(CNY)</td><td width=40 align=left> </td></tr>';
+for(i=0;i<iGoodsItem;i++){
+str += '<tr><td><input type=text name=info_g  class="myinput2" value="';
+str += acGoods[i];
+str += '"></td><td align=left><input type=text name=info_a   class="myinput2" value="';
+str += acAlias[i];
+str += '"><input type=hidden name=info_ca value="';
+str += acCodeA[i];
+str += '"><input type=hidden name=info_cb value="';
+str += acCodeB[i];
+str += '"><input type=hidden name=info_cc value="';
+str += acCodeC[i];
+str += '"><input type=hidden name=info_ct value=';
+str += afCustom[i];
+str += '><input type=hidden name=info_cr value=';
+str += afRate[i];
+str += '></td><td align=left><input type=text name=info_q   onblur="checkNum(this);"  class="input3" value=';
+str += aiQuant[i];
+str += '></td><td align=left><input type=text name=info_p   onblur="checkNum(this);" class="input3" value=';
+str += afPrice[i];
+str += '><input type=hidden name=xx  class="input3" value="xx"></td><td align=left class=sblue ';
+if(i>0) 
+	{str += ' onclick=GoodsItemDel(';
+	str += i;
+	str += ')> 删除';
+}
+else  str +='>';
+str +='</td></tr>';}
+str += '</table>';
+theGoodsInfo.innerHTML = str;
+//if(iGoodsItem>=7) document.getElementById("oBtn").style.display="none";
+//else document.getElementById("oBtn").style.display="block";
+
+
+}
+
+function GoodsItemDel(ipos){
+var og=document.getElementsByName('info_g');
+var oq=document.getElementsByName('info_q');
+var op=document.getElementsByName('info_p');
+var oa=document.getElementsByName('info_a');
+var oca=document.getElementsByName('info_ca');
+var ocb=document.getElementsByName('info_cb');
+var occ=document.getElementsByName('info_cc');
+var oct=document.getElementsByName('info_ct');
+var ocr=document.getElementsByName('info_cr');
+if(og == null || oq == null ||op == null||oca == null) return;
+var n=0;
+for(i=0;i<iGoodsItem;i++){
+if(i==ipos) continue;
+acGoods[n]=og[i].value;
+aiQuant[n]=oq[i].value;
+afPrice[n]=op[i].value;
+acAlias[n]=oa[i].value;
+acCodeA[n]=oca[i].value;
+acCodeB[n]=ocb[i].value;
+acCodeC[n]=occ[i].value;
+afCustom[n]=oct[i].value;
+afRate[n]=ocr[i].value;
+n++;}
+iGoodsItem--;
+UpdateGoodsInfo();}
+
+var bDispSender=false;
+function DispSender(){
+var o=document.getElementById('sndTag');
+if(o==null) return;
+if(bDispSender){
+bDispSender=false;
+o.innerHTML="<button type='button' class='btn btn-primary' onclick='DispSender();'>我要填写发货人信息！</button>";
+sndDiv.style.display='none';return;}
+bDispSender=true;
+o.innerHTML="<font color='#008000'>以下发件人信息请根据要求填写：</font>[<span  onclick='DispSender();' style='cursor:hand;color:#0000FF;text-decoration:underline;'>隐藏</span>] <button type='button' value='用我的默认信息填充' class='btn btn-primary' onclick='FillSender();'>用我的默认信息填充</button>";
+sndDiv.style.display='';}
+
+var bPrintTab = false;
+var bPrintLab = false;
+var bPrintInv = false;
+
+function TryPrint(ret_cnum){
+
+	var	strTabUrl="/cgi-bin/GInfo.dll?EmsPrintTab&w=au-express&cnum="+ret_cnum;
+	var	strLabUrl="/cgi-bin/GInfo.dll?EmsPrintLab&w=au-express&cnum="+ret_cnum;
+	var	strInvUrl="/cgi-bin/GInfo.dll?EmsPrintInv&w=au-express&cnum="+ret_cnum;
+
+    if(bPrintTab) window.open(strTabUrl);
+	if(bPrintLab) window.open(strLabUrl);
+	if(bPrintInv) window.open(strInvUrl);
+	
+	
+}
+
+function PrintTab(){
+if(!pre_submit()) return;
+bPrintTab = true;
+bPrintLab = false;
+bPrintInv = false;
+document.theForm.submit();
+}
+
+function PrintInv(){
+if(!pre_submit()) return;
+bPrintTab = false;
+bPrintLab = false;
+bPrintInv = true;
+document.theForm.submit();
+
+}
+
+function PrintLab(){
+if(!pre_submit()) return;
+bPrintTab = false;
+bPrintLab = true;
+bPrintInv = false;
+document.theForm.submit();
+
+}
+function IsMod(){
+var o=document.getElementById('cnum');
+if(o==null) return;
+if(o.value=="")
+	{	
+		FillSender();
+	}
+}
+function Fillcx_E()
+{
+	
+	if(cx_E1!=""&&cx_E3!=""&&cx_E4!="") 
+	{
+		if(x_nEmsKind<=0) return;
+		for(var i=0;i<x_nEmsKind;i++)
+		{
+			if(cx_E1==x_acEmsKindd[i]) theForm.cemskind.value=x_acEmsKind[i];
+			
+		}
+		if(cx_E5!="") 
+		{
+			var o=cx_E5.split("*");
+			theForm.ilong.value=o[0];
+			theForm.iwidth.value=o[1];
+			theForm.iheight.value=o[2];
+			}
+		theForm.cdes.value=cx_E3;
+		theForm.fweight.value=cx_E4;
+		if(cx_E2=="文件") theForm.iitemtype[0].selected=true;
+		if(cx_E2=="包裹") theForm.iitemtype[1].selected=true;
+		QueryPrice();
+	}
+	
+}
+function checkNum(o) {
+	 var obtnSub=document.getElementById("osubmit");
+	 obtnSub.disabled=false;
+	 o.className="input3";
+		var aa=o.value;
+		if(!IsNum(aa)||o.value == ""||o.value ==0) {o.className="err";obtnSub.disabled=true;return false;}
+}
+function IsNum(yx){
+ var regStr = /^([0-9]|\.)+$/;
+ return regStr.test(yx);
+}
+function xoResponse(i,mess)
+{	
+	var str="<table width='400' border='0'  cellpadding='2' cellspacing='1'   bgcolor='#999999' >";
+str +="<tr bgcolor='#FFFFFF'><td class='intro'>";
+str += "<b>收件人信息：</b><br>";
+str +=" 收件人名：<font color='#FF6600'>";
+str +=theForm.creceiver.value;
+str +="</font><br>";
+str +=" 收件人城市：<font color='#FF6600'>";
+str +=theForm.ccity.value;
+str +="</font><br>";
+str +=" 收件人电话：<font color='#FF6600'>";
+str +=theForm.cphone.value;
+str +="</font><br>";
+str +=" 收件人地址：<font color='#FF6600'>";
+str +=theForm.caddr.value;
+str +="</font><br>";
+str += "<b>物品描述：</b><br>";
+str +=theForm.cgoods.value;
+
+ds.dialog({
+		   title : '包裹详细信息',
+		   content : str,
+		   yesText : '确认订单',
+		   onyes:function(){
+			   location.href="/cgi-bin/GInfo.dll?RecPreInputList&w=au-express"; 
+			   return false;
+		   },
+		   noText : '继续录单',
+		   onno : function(){
+			   PartClear(true);
+		   },
+		});
+}
+
+function valiTel(o)
+{	
+ var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/; 
+ if (!reg.test(o.value)) { 
+      alert("请输入11位手机号码"); 
+	  o.value="";
+ }
+}
+</script>
+
+</head>
+<!--RecPreInputSet-->
+<body  onload="IsMod();FillEmskind();Fillcx_E();" topmargin=0>
+<form method='POST' id='theForm' name='theForm' action='/cgi-bin/GInfo.dll?RecPreInputSet' target='theNote' onsubmit='return pre_submit();' >
+<input TYPE='hidden' NAME='w' VALUE='au-express'>
+<input type='hidden' name='iidnum' value=0 id="iidnum">
+<input type='hidden' name='iid' value=0 id="iid">
+<input type='hidden' name='ilanguage' value=0>
+<input type='hidden' name='cmark' id="cmark">
+<input type='hidden' name='cdepart' id="cdepart">
+<input type='hidden' name='cno' id="cno">
+<input type='hidden' name='ccno' id="ccno">
+<input type='hidden' name='crno' size=30  >
+<input type='hidden' name='creserve' id="creserve">
+<input type='hidden' name='ireserve' id="ireserve">
+<input type='hidden' name='cunit' id="cunit">
+<input type='hidden' name='cby2' id="cby3">
+<input type='hidden' name='cby3' id="cby3">
+<input type='hidden' name='cby4' id="cby4">
+<input type='hidden' name='cby5' id="cby5">
+<input type='hidden' name='calias' id="calias">
+ <input name='ccodea' id="ccodea" type='hidden'>
+<input type='hidden' name='ccodeb' id="ccodeb">
+<input type='hidden' name='ccodec' id="ccodec">
+<input type='hidden' name='fcustom' id="fcustom">
+<input type='hidden' name='frate' id="frate">
+<input type='hidden' name='cemskindc' value=''>
+<input type='hidden' name='cemskindw' value=''>
+<input type='hidden' name='faget' value=0>
+<input type='hidden' name='fapack' value=0>
+<input type='hidden' name='faother' value=0>
+<input type='hidden' name='facheck' value=0>
+<input type='hidden' name='faremote' value=0>
+<input type='hidden' name='faby' value=0>
+<input type='hidden' name='nver' value=3><!--4，返回JSON-->
+<input name='cssms' type='hidden' class="input1"  />
+<input type='hidden' name='fgoodsc' >
+ <input type='hidden' name='fgoods' value="">
+ <input type='hidden' name='fivalue' >
+ <input type='hidden' name='fasafe' id="fasafe" >
+ <input type='hidden' name='cmemo'   id="cmemo">
+ <input name='cgoods'  id="cgoods" type='hidden' >
+ <input name='iquantity' type='hidden' id="iquantity" value=1>
+ <input name="fprice" type='hidden'  id="fprice" value="1"/>
+<input name='cpack' type='hidden' class="input1" size=30>
+<input name='cmoney' type='hidden'  value='CNY'>
+<input type='hidden' name='cby1' class="myinput2" id="cby1" />
+<input type='hidden' name='crsms'  />
+<input type='hidden' name='famount' value=0>
+<input name='csemail' type='hidden' />
+<input type='hidden' name='cremail'  id="cremail"  />
+
+<table width="780" border="0" cellpadding="5" cellspacing="1" bgcolor="#ffffff">
+  <tr>
+    <td><img src="/EMS_MODEL/pic/input01.gif" width="18" height="18" hspace="5" align="absmiddle"><span class="f12B">当前位置：</span>会员首页 &gt; 网上录单 <span id='theNum'></span></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td bgcolor="#EFEFEF"><table width='100%' border='0' cellpadding="0" cellspacing='2'  id="tbBG">
+  <tr><td colspan="2"><div id="txtKind"><strong><span id='theTitle'>客户业务单录入：</span></strong>  </div></td></tr>
+  <tr>
+    <td width="130" align='right'><span class="fred">* </span>快递类别： </td>
+	<td width="632"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+    		<td><span id="oemskind"><select size=1 name='cemskind'>
+	<option value='' selected>------请选择------</option>
+    </select> </span>
+    		运单号：<input type='text' name='cnum'  id="cnum" class="input1"></td>
+	</tr></table>
+	</td>
+  </tr>
+  <tr>
+    <td align='right'><span class="fred">* </span>目的地：</td>
+    <td><input type='text' name='cdes'  id="cdes"   onchange='QueryPrice();' class="input2"  onblur="QueryDes();">
+      <span class="f12blue3">　　</span>
+      <select id="iitemtype" name="iitemtype" onchange='QueryPrice();'>
+        <option value="0">文件 DOC</option>
+        <option value="1" selected="selected">包裹 PAK</option>
+        </select>  
+      &nbsp;&nbsp;&nbsp;<input name='iitem' type='text' class="myinput3"  value=1>件</td>
+  </tr>
+  <tr>
+    <td align='right'>重量：</td>
+    <td><input name='fweight' type='text'  class="input2" value="1" id="fweight" onchange="QueryPrice();">
+      KG  体积：长
+      <input name='ilong' type='text'  class="myinput3" onchange="QueryPrice();">
+      *宽
+      <input type='text' name='iwidth'  class="myinput3" onchange="QueryPrice();">
+      *高
+      <input type='text' name='iheight'  class="myinput3" onchange="QueryPrice();"> 
+      厘米<span id='thePrice'  style="display:none"></span></td></tr><tr><td align='right'></td>
+  <td> </td></tr></table></td>
+      </tr>
+
+      <tr>
+        <td><table width="100%" border="0" cellpadding="4" cellspacing="0" id="table1">
+        <tr>
+          <td height="30" align="left"><a href="javascript:QueryAddrList();" class="f12blue2">显示常用收件地址：</a></td>
+        </tr>
+        <tr>
+          <td align="left">
+		    <div id="addrList"></div></td>
+        </tr>
+
+      </table></td>
+      </tr>
+      <tr>
+        <td><table width="768" border="0" cellpadding="0" cellspacing="0" bgcolor="#EFEFEF" >
+          <tr>
+            <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><div id="txtKind"><strong><span>收件人信息：</span></strong> </div></td>
+              </tr>
+              <tr>
+                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center"></td>
+                  </tr>
+                </table>
+                  <table width='100%' border='0' cellpadding="0" cellspacing='2'  id="tbBG">
+  <tr>
+  <td width="113" align='right'><font color=red>*</font> 收件人姓名：</td>
+  <td width="277"><input type='text' name='creceiver' onkeypress='GO(eval(cunitname));' onblur='QueryReceiver()' class="input1">  </td></tr>
+  <tr>
+  <td width="113" align='right'> 收件人单位：</td>
+  <td width="277"><input type='text' name='cunitname' onkeypress='GO(eval(cphone));' class="input1">  </td></tr>
+  <tr>
+    <td align='right'><span class="fred">*</span> 收件人手机号码：</td>
+    <td><input type='text' name='cphone' class="input1" id="cphone" onkeypress='GO(eval(caddr));' /> </td>
+  </tr>
+  <tr>
+    <td align='right' valign='top'><font color="red">*</font> 详细地址：</td>
+    <td><textarea name="caddr" cols="20" rows="4"  class="mytextarea" onkeypress='GO(eval(cpostcode));'></textarea>    </td>
+  </tr>
+  <tr>
+    <td align='right' valign='top'>
+     <span class="fred">*</span>  邮 编：</td>
+    <td><input name='cpostcode' type='text' class="input3" onKeyPress='GO(eval(ccountry));'> 
+      <span class="fred">*</span> 国 家：<input name='ccountry' type='text' class="input3"  onKeyPress='GO(eval(cprovince));' value="中国"/></td>
+  </tr>
+  <tr>
+    <td align='right' valign='top'>省/州：</td>
+    <td><input  name="cprovince" id="cprovince"  class="input3"  onKeyPress='GO(eval(ccity));'>
+      <span class="fred">*</span> 城 市：<input name="ccity" id="ccity" class="input3">
+</td>
+  </tr>
+  <tr>
+    <td height="30" align='right'>&nbsp;</td>
+    <td><button type="button" class='btn btn-primary' onclick='addNewAddress();'>添加到常用收件地址</button></tr>
+</table></td>
+              </tr>
+            </table></td>
+            <td width="5" valign="top" bgcolor="#EFEFEF"></td>
+            <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div id="txtKind"><strong><span>发件人信息：</span></strong><button type="button" class='btn btn-primary' onclick='FillSender();'>用我的默认信息填充！</button> </div></td>
+  </tr>
+  <tr>
+    <td><div id='sndDiv' style='display:block'>
+
+<table width='100%' border='0' cellpadding="0" cellspacing='2' id="tbBG">
+  <tr><td align='right' width='85'>发件人姓名：</td>
+    <td><input name='csender' type='text' class="input1" onblur='QuerySender()' onkeypress='GO(eval(csunitname));'></td>
+  </tr>
+  <tr><td align='right' width='85'>发件人单位：</td>
+    <td><input name='csunitname' type='text' class="input1" onkeypress='GO(eval(csphone));'></td>
+  </tr>
+  <tr>
+    <td align='right'>发件人电话：</td>
+    <td><input name='csphone' type='text' class="input1" onkeypress='GO(eval(csaddr));' /></td>
+  </tr><tr><td align='right' valign='top'>
+    详细地址：</td>
+    <td><textarea name='csaddr' rows='4' class="mytextarea"></textarea></td></tr><tr>
+      <td align='right'>邮 编：</td>
+      <td><input name='cspostcode' type='text' class="input3" onkeypress='GO(eval(cscountry));'>
+        &nbsp; &nbsp;国 家：
+        <input name='cscountry' type='text' class="input3"  onkeypress='GO(eval(csprovince));'/></td></tr>
+    <tr>
+      <td align='right'>省/州：</td>
+      <td><input name='csprovince' type='text' class="input3" onkeypress='GO(eval(cscity));' />
+        &nbsp; &nbsp;城 市：
+        <input name='cscity' type='text' class="input3"  /></td>
+    </tr>
+</table>
+</div></td>
+  </tr>
+</table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#EFEFEF" id="tbBG" style="margin-top:5px">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="17%"><div id="txtKind"><strong>您要发运什么？</strong></div></td>
+    <td width="83%" height="50" align="left">&nbsp;</td>
+  </tr>
+</table></td>
+  </tr>
+  <tr>
+    <td height="60" align="center"><table width="705" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td  height="35" align="left"  id='theGoodsInfo'>&nbsp;</td>
+        </tr>
+        <tr>
+          <td > <div id="oBtn"><button type="button" class='btn btn-primary'  id="btnAdd" onClick="GoodsItemAdd('',1,1,'','','',0,0,0);" >添加多件物品信息</button></div>
+            </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="2" cellpadding="0">
+      <tr>
+        <td width="12%" align="right">声明价：</td>
+        <td width="88%" height="10" align="left"><input name='fdvalue' type='text' class="input1" /></td>
+      </tr>
+      <tr>
+        <td align='right' valign='top'>托运备注：</td>
+        <td align="left"><textarea name='ctransnote' rows='4' class="myMemo" id="ctransnote"></textarea></td>
+      </tr>
+      <tr>
+        <td align='right'></td>
+        <td align="left"><span class="f12blue3">不要超过254字符（127汉字）</span></td>
+      </tr>
+    </table></td>
+  </tr>
+
+</table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#EFEFEF" id="tbBG">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="23%"><div id="txtKind"><strong>您希望如何付款 ？</strong></div></td>
+    <td width="77%"><input type='hidden' name='ipayway' value="0" />
+          <input type='radio' name='ipayway' checked="checked" value="1" />
+          <font color='brown'>现付</font>
+          <input type='radio' name='ipayway' value="2" />
+          <font color='brown'>到付</font>&nbsp;
+          <input type='hidden' name='cpaydir' value='PP' />
+          </td>
+  </tr>
+</table></td>
+  </tr>
+
+</table></td>
+      </tr>
+      <tr>
+        <td height="60" align="left" class="f12gray">
+By clicking on the button below, you agree to our Terms and Conditions
+在点击以下按钮以前请阅读 承运条款 ，一旦您生成了此运单就表示您已阅读过此承运条款，并同意条款的所有内容。</td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="2" cellpadding="0">
+          <tr>
+            <td width="24%" align="left"></td>
+            </tr>
+          <tr>
+            <td width="33%" align="left"><button  type='submit'  class='btn btn-primary' id="osubmit" >提交运单</button></td>
+            <td width="33%" align="left"><button type='button' onclick='PartClear();' value='重新输入'  class='btn btn-primary'>重新输入</button></td>
+            <td width="33%" align="left"><span id='btnDelete'>
+              <button type='button' value='删除本条' onclick='DeleteIt()' class='btn btn-primary'>删除本条</button></span></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><span id="strMess"></span><IFRAME frameBorder=0 allowtransparency="1" height=20 marginHeight=0 marginWidth=0 width=100% name='theNote' id='theNote'  SCROLLING=NO></IFRAME></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+  <input type='hidden' name='fin' value='e'>
+</form>
+<script language="javascript">GoodsItemAdd('',1,1,'','','',0,0,0);</script>
+</body></html>

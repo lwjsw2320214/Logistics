@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>「{会员帐号}」快件业务交款清单</title>
+<link href="/EMS_MODEL/css/main.css" rel="stylesheet" type="text/css">
+<link href="/EMS_MODEL/css/exCSS.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%" border='0' cellspacing='0' class='recPreInputListTable'>
+  <tr>
+    <td align='left'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align='left'><span class='kindc'>「{会员帐号}」快件业务交款清单</span></td>
+  </tr>
+  <tr>
+    <td><table width='100%' height='80' border='0'align='center' cellpadding='2' cellspacing='1'  bgcolor="#CCCCCC" >
+      <tr class="recPreInputListTitle">
+        <td width='60' align='center'>序号</td>
+        <td width='80' align='center' >交款日期</td>
+        <td width="80" align='center'>类别</td>
+        <td width="100" align='right'>交款金额</td>
+        <td width="100" align='right'>票单金额</td>
+        <td width="80" align='center'>币种</td>
+        <td width="100" align='right'>原币金额</td>
+        <td width="100" align='center'>发票号</td>
+        <td width="80" align='center'>经办人</td>
+        <td width="100" align="center">下载明细账单</td>
+        <td align='left'>备注</td>
+      </tr>
+	  <!--列表奇数行开始-->
+      <tr align='center' class='recPreInputListEven'>
+        <td align='center'>{序号}</td>
+        <td align='center' >{交款日期}</td>
+        <td align='center'>{类别}</td>
+        <td align='right'>{交款金额}</td>
+        <td align='right'>{票单金额}</td>
+        <td align='center'>{币种}</td>
+        <td align='right'>{原币金额}</td>
+        <td align='center'>{发票号}</td>
+        <td align='center'>{经办人}</td>
+        <td align='center'>{下载核收明细}</td>
+        <td align='left'>{备注}</td>
+      </tr>
+	  <!--列表奇数行结束-->
+	  <!--列表偶数行开始-->
+     <tr align='center' class='recPreInputListOdd'>
+        <td align='center'>{序号}</td>
+        <td align='center' >{交款日期}</td>
+        <td align='center'>{类别}</td>
+        <td align='right'>{交款金额}</td>
+        <td align='right'>{票单金额}</td>
+        <td align='center'>{币种}</td>
+        <td align='right'>{原币金额}</td>
+        <td align='center'>{发票号}</td>
+        <td align='center'>{经办人}</td>
+        <td align='center'>{下载核收明细}</td>
+        <td align='left'>{备注}</td>
+      </tr>
+	  <!--列表偶数行结束-->
+	  <!--列表汇总行开始-->
+      <tr align='center' class='recPreInputListTotal'>
+        <td align='center'>合计</td>
+        <td align="center">&nbsp;</td>
+        <td  align='center'>&nbsp;</td>
+        <td align="right" >{交款金额}</td>
+        <td align="right" >{票单金额}</td>
+        <td>&nbsp;</td>
+        <td  align='right'>{原币金额}</td>
+        <td align="center" >&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <!--列表汇总行结束-->
+    </table></td>
+  </tr>
+  <tr align="left">
+    <td height="60">{翻页导航}<!--(共<font color=green>239</font>条)<font color=red>1</font>/5页  
+	<input id='pp_pp' type='text' size=4 value=3 class='buttonc0'><button type="button" class="bt_more"  onClick='ChangePage(pp_pp.value);'>翻 页</button> <script language=JavaScript>var strBaseNN='/cgi-bin/GInfo.dll?EmmisFeeList&w=cnexx&nn=239';function ChangePage(strPage){location=strBaseNN+'&np='+strPage;}</script>
+	<a href='/cgi-bin/GInfo.dll?EmmisFeeList&w=cnexx&nn=239&np=2'>下页<font style='font-family:Webdings;'>8</font></a>&nbsp;<a href='/cgi-bin/GInfo.dll?EmmisFeeList&w=cnexx&nn=239&np=5'>尾页<font style='font-family:Webdings;'>:</font></a>--></td>
+  </tr>
+</table>
+</body>
+</html>

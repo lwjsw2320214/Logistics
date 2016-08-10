@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>打印面单<!--PART1_BEGIN--></title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial,宋体, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body {
+	background-image: url();
+	background-position: left top;
+}
+#MainBox {
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+.f14B {
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 120%;
+}
+.f18B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+.f24B {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 1.5em;
+	font-weight: bold;
+}
+
+#MainBox .OutLine {
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	width: 400px;
+	border: 1px dashed #444444;
+	margin: 0px;
+	padding: 0px;
+}
+#MainBox .topTable {
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 120%;
+	font-weight: bold;
+	margin-top: 3px;
+}
+#MainBox .bottomTable {
+	margin-bottom: 5px;
+}
+#weightBox1 {
+	font-family: "宋体", Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+#telr {
+	float: right;
+	text-align: left;
+	width: 150px;
+}
+#ZipL {
+	float: left;
+	width: 150px;
+}
+td {
+	line-height: 12px;
+}
+.tdlineBR {
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #444444;
+	border-bottom-color: #444444;
+}
+.tdlineL{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #444444;
+}
+.tdlineT{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #444444;
+}
+.tdlineR{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #444444;
+}
+.tdlineB{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #444444;
+}
+
+.tdline3{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #444444;
+	border-right-color: #444444;
+	border-left-color: #444444;
+}
+.tdlineLT {
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #444444;
+	border-left-color: #444444;
+}
+.tdlineLR {
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #444444;
+	border-left-color: #444444;
+}
+.tdlineTR {
+	border-right-width: 1px;
+	border-top-width: 1px;
+	border-right-style: solid;
+	border-top-style: solid;
+	border-right-color: #444444;
+	border-top-color: #444444;
+}
+.tbline {
+	border: 1px solid #444444;
+}
+.fen {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+td {
+	line-height: 15px;
+}
+-->
+</style>
+<Script Laguage=JavaScript>
+function DoIt()
+{
+	var curDate = new Date();
+	var strDate = "<strong>"+curDate.getFullYear() + "-" + (curDate.getMonth()+1) + "-" + curDate.getDate() +"</strong>"; 
+	dateBox1.innerHTML=strDate;
+	dateBox2.innerHTML=strDate;	
+}
+
+</Script>
+
+</head>
+
+<!--PART1_END-->
+
+
+<!--PART2_BEGIN-->
+<body>
+<!--PRINT_BLOCK_BEGIN-->
+<table width="800" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="345" align="left"><img width="419" height="53" src="/EMS_MODEL/pic/LOGO.jpg" /></td>
+    <td width="355" align="center" valign="bottom"><table width="260" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:5px">
+          <tr>
+            <td width="278" height="50" align="center">{运单号条码,200,50,0,0}</td>
+        </tr>
+          <tr>
+            <td  align="center"><div align="center" id="weightBox1" >{运单号}</div></td>
+          </tr>
+    </table></td>
+  </tr>
+</table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellpadding="0" cellspacing="0" class="tbline">
+  <tr>
+    <td width="345" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td width="150" align="left" valign="top" class="tdlineBR">收寄局</td>
+            <td align="left" valign="top" class="tdlineBR">收寄日期</td>
+          </tr>
+          <tr>
+            <td align="left" class="tdlineBR">寄件人<br />
+              {发件人}<br /></td>
+            <td align="left" class="tdlineBR">电话（非常重要）<br />
+              {发件电话}</td>
+          </tr>
+          <tr>
+            <td align="left" class="tdlineBR">城市
+              {发件城市}</td>
+            <td align="left" class="tdlineBR">国家
+              {发件国家}</td>
+          </tr>
+
+        </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="5">
+            <tr>
+              <td class="tdlineBR">地址
+                {发件地址}　</td>
+            </tr>
+          </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="5">
+
+            <tr>
+              <td width="150" align="left" class="tdlineBR">邮政编码
+                {发件邮编}<br /></td>
+              <td align="left" class="tdlineBR">用户编码</td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr>
+        <td align="left" class="tdlineBR" >填写本单前请务必阅读背书契约条款，您的签名意味着您理解并接受条款内容。未保价快件丢失损毁或短少，按实际价值赔偿，最高不超过1000元人民币每票，贵重物品请务必保价！<span
+  style='mso-spacerun:yes'>&nbsp;<br />
+           </span>是否保价：口 是 口 否</td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td height="25" align="center" class="tdlineBR">品名</td>
+            <td width="50" align="center" class="tdlineBR">HS编码</td>
+            <td width="50" align="center" class="tdlineBR">数量</td>
+            <td width="50" align="center" class="tdlineBR">单价</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" class="tdlineBR"><span class="STYLE1" style="height:20px;border-left:none">{物品名称1}</span></td>
+            <td align="center" class="tdlineBR">{物品甲码1}</td>
+            <td align="center" class="tdlineBR">{物品数量1}</td>
+            <td align="center" class="tdlineBR">{物品单价1}</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" class="tdlineBR"><span class="STYLE2" style="height:20px;border-left:none">{物品名称2}</span></td>
+            <td align="center" class="tdlineBR">{物品甲码2}</td>
+            <td align="center" class="tdlineBR">{物品数量2}</td>
+            <td align="center" class="tdlineBR">{物品单价2}</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" class="tdlineBR"><span class="STYLE3" style="height:20px;border-left:none">{物品名称3}</span></td>
+            <td align="center" class="tdlineBR">{物品甲码3}</td>
+            <td align="center" class="tdlineBR">{物品数量3}</td>
+            <td align="center" class="tdlineBR">{物品单价3}</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" class="tdlineBR"><span class="STYLE1" style="height:20px;border-left:none">{物品名称4}</span></td>
+            <td align="center" class="tdlineBR">{物品甲码4}</td>
+            <td align="center" class="tdlineBR">{物品数量4}</td>
+            <td align="center" class="tdlineBR">{物品单价4}</td>
+          </tr>
+        </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="5">
+            <tr>
+              <td width="72%" align="left">我保证上述申报内容为真实及快件未夹寄禁寄和危险品。<span class="fen">I
+  ASSURE THE TRUTH OF THE ABOVE DECLARATION AND I GUARANTEE THAT THE SHIPMENT
+  DOES NOT CONTAIN ANY DANGEROUS AND PROHIBTED GOODS.</span></td>
+              <td width="28%" align="left" valign="top" class="tdlineR">交寄人签名：</td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+    <td width="355" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td align="left" class="tdlineB">收件人 
+<strong>{收件人}</strong></td>
+      </tr>
+      <tr>
+        <td class="tdlineB"><table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td align="left">城市</td>
+            <td align="left">国家</td>
+          </tr>
+          <tr>
+            <td align="left"><strong>{收件城市}</strong></td>
+            <td align="left"><strong>{收件国家}</strong></td>
+          </tr>
+        </table>          </td>
+      </tr>
+      <tr>
+        <td class="tdlineB">地址<br />
+          <strong>{收件地址}</strong></td>
+      </tr>
+      <tr>
+        <td class="tdlineB"><table width="100%" border="0" cellspacing="0" cellpadding="5">
+            <tr>
+              <td align="left" valign="top">邮政编码</td>
+              <td align="left" valign="top">电话（非常重要）</td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><strong>{收件邮编}</strong></td>
+              <td align="left" valign="top"><strong>{收件电话}</strong></td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr>
+        <td class="tdlineB"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="63%" align="left" valign="top">体积</td>
+            <td width="37%" align="left" valign="top">总重量</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top">长　　　　　高　　　　　宽　</td>
+            <td align="left" valign="top"><strong>{重量}</strong></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="tdlineB"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="33%" align="left" valign="top">资费</td>
+            <td width="33%" align="left" valign="top">其它费用</td>
+            <td width="33%" align="left" valign="top">总运费</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top">&nbsp;</td>
+            <td align="left" valign="top">&nbsp;</td>
+            <td align="left" valign="top">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="left" class="tdlineB">收件人需先验视内件，须承诺：如拒收或其它情况必须在备注栏注明事由，否则签名意味着您已经正常签收。(收件人签名)_________</td>
+      </tr>
+      <tr>
+        <td align="left" valign="top">备注栏/REFERENCE COLLUMN<br />
+          {托运备注}</td>
+      </tr>
+    </table></td>
+  </tr>
+</table></td>
+  </tr>
+</table>
+<!--PRINT_BLOCK_END-->
+</body>
+</html>
+
+<!--PART2_END-->

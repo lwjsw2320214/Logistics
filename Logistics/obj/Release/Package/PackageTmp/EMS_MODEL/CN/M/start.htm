@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link href="/EMS_MODEL/css/main.css" rel="stylesheet" type="text/css">
+<link href="/EMS_MODEL/css/exCSS.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/EMS_MODEL/js/info.js"></script>
+
+<style type="text/css">
+<!--
+body {
+	margin-right: 0px;
+}
+.btn {
+	line-height: 20px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #444444;
+	cursor: pointer;
+	background-image: url(/EMS_MODEL/pic/bt.jpg);
+	background-repeat: no-repeat;
+	height: 22px;
+	width: 49px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+-->
+</style>
+<script language='javascript' type='text/javascript'> 
+function stInfo()
+{
+    var niid;//记录ID,&nid=
+    var curl;//如果为静态链接，链接串
+    var bstatic;//是否为静态链接：true:false
+    var cpicture;//如果有图片，&pid=
+    var ddate;//日期，YYYY.mm.dd HH:MM,自行处理
+    var ctitle;//标题
+}
+
+function ellipTitle(str,n)
+{
+var ilen = str.length;
+if(ilen*2 <= n) return str;
+n -= 3;
+var i = 0;
+while(i < ilen && n > 0)
+{
+if(escape(str.charAt(i)).length>4) n--;
+n--;
+i++;
+}
+if( n > 0) return str;
+return str.substring(0,i)+"...";
+}
+
+var str="";
+var o;
+var mem_item = 0;//实际返回的数据
+var mem_aiID = new Array();
+var mem_acTitle = new Array();
+var mem_acKind = new Array();
+var mem_acDate = new Array();
+var xq_kind1="常见问题";
+var xq_ckind=xq_kind1;
+
+var request = false;
+try {request = new XMLHttpRequest();} 
+catch (trymicrosoft) {
+try{request = new ActiveXObject('Msxml2.XMLHTTP');}
+catch (othermicrosoft) {
+try{request = new ActiveXObject('Microsoft.XMLHTTP');}
+catch (failed){request = false;}}}
+
+
+function QueryMemInfo(){
+var url = "/cgi-bin/GInfo.dll?ajxMemInfoKind&w=au-express&ckind="+xq_ckind+"&inum=15";
+request.open("GET", url, true);
+request.onreadystatechange = QueryMemInfoOK;
+request.send(null);}
+
+function QueryMemInfoOK()
+{
+	if (request.readyState == 4)
+	{
+		if (request.status == 200)
+		{
+			var response = request.responseText.split("|");
+			//if(response[0]<=0){ MemInfo.innerHTML=response[0]; return;}
+			mem_item=parseInt(response[0]);
+			eval(response[1].replace(/&#124;/g,"|"));
+			UpdateMemoInfo();
+		}
+	}
+}
+
+function UpdateMemoInfo()
+{	
+	var om=null;
+	//if(xq_ckind == xq_kind1) 	om=document.getElementById("MemInfo1");
+	//else 						om=document.getElementById("MemInfo2");
+	om=document.getElementById("MemInfo1");
+	if(om == null) return ;
+	
+	//if(mem_item==0) {xq_ckind = xq_kind2;QueryMemInfo();}
+	if(mem_item==0) return ;
+	for(i=0;i<mem_item;i++)
+	{
+		str	 +=	"<div id='newsBox'>";
+		str	 +="<div id='newsList'>";
+		str += "<a href='";
+		str += "/cgi-bin/GInfo.dll?DispMemInfo&w=au-express&nid=";
+		str += mem_aiID[i];
+		str += "' target='_blank' class='newsList'>";
+		str +=	 ellipTitle(mem_acTitle[i],85);
+		str +=	 "</a></div>";
+		str += "</div>";
+	}
+	om.innerHTML=str;
+	return ;
+}
+</script>
+</head>
+
+<body >
+<table width="780" border="0" cellspacing="0" cellpadding="0" style="margin-top:15px" id="tdline">
+  <tr>
+    <td height="100" valign="bottom" background="/EMS_MODEL/pic/start_16.jpg"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+      <tr>
+        <td width="144" height="80"  style="cursor:pointer" onclick="window.open('/cgi-bin/GInfo.dll?MoreMemKind&w=au-express&nkind=%D0%C2%CE%C5%B9%AB%B8%E6','_blank')">&nbsp;</td>
+        <td width="400" height="60" align="left" valign="bottom" id="news0"><iframe frameborder="0" width="400" height="60" allowtransparency="true" marginheight="0" marginwidth="0" scrolling="No" src="/cgi-bin/GInfo.dll?HomePagePic&amp;w=au-express"></iframe></td>
+        <td width="216" align="left">
+		<form id="form1" name="form1" method="post" action="/cgi-bin/GInfo.dll?EmmisTrack" target="_blank">
+		<input type='hidden' name='w' value='au-express'>
+		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="76%" align="center"><input name="cno" type="text" class="inputFormMember" id="cno" value="运单查询"  onfocus="this.value=''"/></td>
+        <td width="24%" align="left"><input  type="submit" class="btn" id="button" value="查 询" /></td>
+      </tr>
+    </table>
+	</form>
+	</td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="780" border="0" cellspacing="0" cellpadding="0" style="margin-top:15px" id="tdline">
+  <tr>
+    <td height="100"><div id="txtAbout"><br />
+      <img src="/EMS_MODEL/pic/login_07.jpg" width="733" height="89" usemap="#Map" border="0" />        </div></td>
+  </tr>
+</table><table width="780" border="0" cellspacing="0" cellpadding="0" style="margin-top:15px" id="tdline">
+  <tr>
+    <td height="100"><div id="faq"><br />
+        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td width="61%" align="left" valign="top"><div  id="MemInfo1"></div></td>
+            <td width="39%" align="right"><div id="ticker">
+              <li class="ic1"><a href="http://get.adobe.com/cn/reader/otherversions/" target="_blank">点此下载官方PDF</a></li> 
+              <li class="ic2"><a href="/cgi-bin/GInfo.dll?DispAdvice&w=au-express" target="_blank">客户意见反馈</a></li> 
+            </div></td>
+          </tr>
+        </table>
+        </div></td>
+  </tr>
+</table>
+
+<map name="Map" id="Map">
+  <area shape="rect" coords="20,4,158,87" href="/cgi-bin/GInfo.dll?RecPreInputSetForm&amp;w=au-express" target="main" />
+</map>
+</body>
+</html>
+<SCRIPT language="javascript">
+QueryMemInfo();
+</SCRIPT>

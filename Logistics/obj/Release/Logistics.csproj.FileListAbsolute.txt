@@ -1,0 +1,16 @@
+G:\物流\Logistics\Logistics\bin\Logistics.dll.config
+G:\物流\Logistics\Logistics\bin\Logistics.dll
+G:\物流\Logistics\Logistics\bin\Logistics.pdb
+G:\物流\Logistics\Logistics\obj\Release\Logistics.dll
+G:\物流\Logistics\Logistics\obj\Release\Logistics.pdb
+G:\物流\Logistics\Logistics\bin\Entity.dll
+G:\物流\Logistics\Logistics\bin\Service.dll
+G:\物流\Logistics\Logistics\bin\Dao.dll
+G:\物流\Logistics\Logistics\bin\DBUtility.dll
+G:\物流\Logistics\Logistics\bin\Entity.pdb
+G:\物流\Logistics\Logistics\bin\Service.pdb
+G:\物流\Logistics\Logistics\bin\Dao.pdb
+G:\物流\Logistics\Logistics\bin\DBUtility.pdb
+G:\物流\Logistics\Logistics\obj\Release\Logistics.csprojResolveAssemblyReference.cache
+G:\物流\Logistics\Logistics\bin\common.dll
+G:\物流\Logistics\Logistics\bin\common.pdb

@@ -1,0 +1,9 @@
+G:\物流\Logistics\dao\bin\Release\Dao.dll
+G:\物流\Logistics\dao\bin\Release\Dao.pdb
+G:\物流\Logistics\dao\bin\Release\DBUtility.dll
+G:\物流\Logistics\dao\bin\Release\Entity.dll
+G:\物流\Logistics\dao\bin\Release\DBUtility.pdb
+G:\物流\Logistics\dao\bin\Release\Entity.pdb
+G:\物流\Logistics\dao\obj\Release\Dao.csprojResolveAssemblyReference.cache
+G:\物流\Logistics\dao\obj\Release\Dao.dll
+G:\物流\Logistics\dao\obj\Release\Dao.pdb

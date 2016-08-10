@@ -1,0 +1,186 @@
+<html><head><meta http-equiv='Content-Type' content='text/html; charset=gb2312'>
+<title>收件人地址管理</title>
+<link href="/EMS_MODEL/css/main.css" rel="stylesheet" type="text/css">
+<link href="/EMS_MODEL/css/exCSS.css" rel="stylesheet" type="text/css" />
+
+<script language='javascript' type='text/javascript'>
+var request = false;
+try {request = new XMLHttpRequest();} 
+catch (trymicrosoft) {
+try{request = new ActiveXObject('Msxml2.XMLHTTP');}
+catch (othermicrosoft) {
+try{request = new ActiveXObject('Microsoft.XMLHTTP');}
+catch (failed){request = false;}}}
+
+function GO(o){
+if(event.keyCode==13){ event.keyCode=9;o.focus();}}
+var strBase='/cgi-bin/GInfo.dll?';
+var strVali='&w=au-express';
+function QueryID(i){
+var url = '/cgi-bin/GInfo.dll?ajxEmsSRIGet'+strVali+'&iid='+i;
+request.open('GET', url, true);
+request.onreadystatechange = QueryIDOK;
+request.send(null);}
+function QueryIDOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+if(request.responseText.charAt(0) == '-'){
+return ;}
+if(request.responseText.charAt(0) == '0'){
+return ;}
+var response = request.responseText.split('|');
+theForm.iid.value = parseInt(response[0],10);
+theForm.cname.value=response[1].replace(/&#124;/g,'|');
+theForm.cunit.value=response[2].replace(/&#124;/g,'|');
+theForm.caddr.value=response[3].replace(/&#124;/g,'|');
+theForm.cphone.value=response[4].replace(/&#124;/g,'|');
+theForm.ccountry.value=response[5].replace(/&#124;/g,'|');
+theForm.cprovince.value=response[6].replace(/&#124;/g,'|');
+theForm.ccity.value=response[7].replace(/&#124;/g,'|');
+theForm.cpost.value=response[8].replace(/&#124;/g,'|');
+theForm.csms.value=response[9].replace(/&#124;/g,'|');
+theForm.cemail.value=response[10].replace(/&#124;/g,'|');
+theForm.cidcard.value=response[11].replace(/&#124;/g,'|');
+theForm.cqq.value=response[12].replace(/&#124;/g,'|');
+theForm.cmsn.value=response[13].replace(/&#124;/g,'|');
+theForm.cskype.value=response[14].replace(/&#124;/g,'|');
+theForm.cwang.value=response[15].replace(/&#124;/g,'|');
+theForm.ccode.value=response[16].replace(/&#124;/g,'|');
+theForm.cmark.value=response[17].replace(/&#124;/g,'|');
+clFile=response[19].replace(/&#124;/g,'|');
+if(clFile!=''){
+fileDiv.style.display='';
+lFile.innerHTML=clFile+'('+response[18]+'b)';}
+theTitle.innerHTML = "<span class='f14b'>修改收件人地址</span>";
+return ;}}}
+function pre_submit(){
+var strErr='请更正如下资料后再提交：\r\n-------------------\r\n';
+var bOk=true;
+theForm.cunit.value= theForm.cname.value +"-"+ theForm.cidcard.value;
+if(theForm.caddr.value.length<1)
+{strErr+='没有填写详细地址\r\n';bOk=false;}
+if(theForm.cpost.value.length<1)
+{strErr+='没有填写邮政编码\r\n';bOk=false;}
+if(theForm.cname.value.length<1)
+{strErr+='没有填写收件人姓名\r\n';bOk=false;}
+/*if(theForm.file0.value.length<8||theForm.file1.value.length<8)  
+{strErr+='请上传身份证正反面照片\r\n';bOk=false;}*/
+if(!bOk) alert(strErr);return bOk;
+var o=document.getElementById('oSubmit');
+o.disabled="disabled";
+
+}
+
+function DeleteIt(){
+btnDelete.innerHTML = '<font color=red>正在删除...</font>';
+document.all['theNote'].src = strBase+'ajxEmsSRIDel'+strVali+'&iid='+theForm.iid.value;
+
+}
+
+function IsImage(ic)
+{
+	var str="";
+	var o=document.getElementById("file"+ic);
+	if(o==null) return;
+	str=o.value;
+	if(str.indexOf(".jpg")==-1&&str.indexOf(".gif")==-1&&str.indexOf(".png")==-1)
+	alert("文件格式不正确，请重新上传");
+}
+</script>
+<style type="text/css">
+<!--
+td {
+	line-height: 20px;
+}
+.myinput {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #666666;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #666666;
+	width: 400px;
+}
+-->
+</style>
+</head>
+<body topmargin=0>
+<table width="880" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px">
+        <tr>
+          <td width="7%" align="center"><img src="/EMS_MODEL/pic/input01.jpg" width="21" height="23" /></td>
+          <td width="93%" height="50" align="left"><span class="f14b" id='theTitle'>收件人地址管理</span></td>
+        </tr>
+</table>
+
+<table width='880'    cellpadding='4' cellspacing='1'   bgcolor="#ccc" >
+  <form method='POST' id='theForm' name='theForm' action='/cgi-bin/GInfo.dll?SRISet' target='theNote' enctype='multipart/form-data' onsubmit='return pre_submit();'>
+<input type='hidden' name='w' value='au-express'>
+  <input type='hidden' name='iid' value=0>
+  <input type='hidden' name='ikind' value=0>
+  <input type='hidden' name='ccode' value=''>
+  <input type='hidden' name='cmark'>
+  <input type='hidden' name='cqq'>
+  <input type='hidden' name='cmsn'>
+  <input type='hidden' name='cskype'>
+  <input type='hidden' name='cwang' >
+  <input type='hidden' name='csms'>
+  <input name='ccountry' type='hidden' >
+  <input type='hidden' name='cunit' ><tr><td width="118" align='right' bgcolor="#FFFFFF">收 件 人：</td>
+<td width="741" bgcolor="#FFFFFF"><input type='text' name='cname' size=60 onkeypress='GO(eval(caddr));' class="myinput">
+  <font color=red> *</font></td>
+</tr>
+<tr><td align='right' valign='top' bgcolor="#FFFFFF">收件地址：</td>
+<td bgcolor="#FFFFFF"><textarea rows='4' name='caddr' cols='62' onkeypress='GO(eval(cphone));'></textarea>
+  <font color=red> *</font></td>
+</tr><tr><td align='right' bgcolor="#FFFFFF">联系电话：</td>
+<td bgcolor="#FFFFFF"><input type='text' name='cphone' size=20 onKeyPress='GO(eval(cemail));' class="myinput2">
+  <font color=red>* </font><span class="forange">请填写手机号码，最多11位。</span>联系邮箱：
+    <input type='text' name='cemail' size=25  class="myinput2" onkeypress='GO(eval(cpost));'>
+    </td>
+</tr><tr><td align='right' bgcolor="#FFFFFF">邮政编码：</td>
+<td bgcolor="#FFFFFF"><input type='text' name='cpost' size=20 onkeypress='GO(eval(ccountry));' class="myinput2">
+  <font color=red> * <A href="http://www.ip138.com/post/" target="_blank">查询邮政编码</A></font> 省/州：
+  <input type='text' name='cprovince' size=15 onKeyPress='GO(eval(ccity));' class="myinput2">
+城市：
+<input type='text' name='ccity' size=20 onKeyPress='GO(eval(cidcard));' class="myinput2"></td>
+</tr>
+ <tr>
+  <td align='right' bgcolor="#FFFFFF">身份证号码：</td>
+  <td bgcolor="#FFFFFF"><input type='text' name='cidcard' size=60  class="myinput">    <span class="forange">为加快清关进度，请上传收件人身份证号码。</span></td>
+</tr>
+<tr>
+  <td align='right' valign="top" bgcolor="#FFFFFF">身份证图片：</td>
+  <td align="left" bgcolor="#FFFFFF"><input name=file0 type=file class="finput" id=file0  onChange="IsImage(0);">
+  （身份证正面）<br>
+<input name=file1 id=file1 type=file  onChange="IsImage(1);" class="finput">
+（身份证反面）<br>
+	<input name=file2 id=file2 type=file  onChange="IsImage(2);" class="finput">
+    （签 名）
+    <br>
+	<br>
+    <div id='fileDiv' style='display:none'><div id='lFile'></div></div>
+    <span style="line-height:220%;"><span class="forange">文件类型：*.gif/*.jpg/*.png 
+      ，尺寸像素宽600X高800，单张图片大小不超过700KB</span><br>
+      <br>
+      <span style="line-height:220%;">二代身份证需要同时提交证件的<strong class="f14b">正反面内容</strong><br>
+      身份证需确保照片、文字信息都清晰可见，如需加水印请在空白处填写“仅供清关使用”字样，否则无效！<br>
+    </span></td>
+</tr>
+
+
+  <tr>
+  <td align='right' bgcolor="#FFFFFF">&nbsp;</td>
+  <td height="50" bgcolor="#FFFFFF"><input type='submit' value='提交信息' class='btn btn-primary' id="oSubmit"> <span id='btnDelete'></span></td></tr><tr><td align='right' bgcolor="#FFFFFF" id='theItems' name = 'theItems'>　</td>
+  <td bgcolor="#FFFFFF">
+<IFRAME frameBorder=0 allowtransparency="1" height=20 marginHeight=0 marginWidth=0 width=500 name='theNote' id='theNote' SCROLLING=NO></IFRAME></td></tr></form></table>
+</body></html>

@@ -1,0 +1,4 @@
+G:\物流\Logistics\Entity\bin\Release\Entity.dll
+G:\物流\Logistics\Entity\bin\Release\Entity.pdb
+G:\物流\Logistics\Entity\obj\Release\Entity.dll
+G:\物流\Logistics\Entity\obj\Release\Entity.pdb

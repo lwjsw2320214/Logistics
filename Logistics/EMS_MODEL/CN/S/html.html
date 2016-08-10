@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;  charset=gb2312" />
+<title>本站公告</title>
+<style type="text/css">
+<!--
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+#newsBox {
+	height: 20px;
+	line-height: 20px;
+	margin-left: 0px;
+	width: 400px;
+}
+#newsList2 {
+	float: left;
+	clear: left;
+	text-align: left;
+	display: inline;
+	overflow: hidden;
+}
+
+#newsList {
+	float: left;
+	clear: left;
+	text-align: left;
+	display: inline;
+	overflow: hidden;
+}
+.newsList {
+	FONT-SIZE: 12px;
+	COLOR: #de030b;
+	FONT-FAMILY: "微软雅黑", Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	vertical-align: baseline;
+	text-align: left;
+}
+A.newsList:hover {
+	TEXT-DECORATION: underline}
+A.newsList:visited {
+	FONT-SIZE: 12px; COLOR: #de030b}
+#newsData {
+	width: 60px;
+	clear: right;
+	float: right;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-align: right;
+	color: #999999;
+	display: inline;
+	overflow: hidden;
+}
+
+
+
+-->
+</style>
+<script type="text/javascript" src="/EMS_MODEL/js/MSClass.js"></script>
+
+<script language='javascript' type='text/javascript'> 
+function stInfo()
+{
+    var niid;//记录ID,&nid=
+    var curl;//如果为静态链接，链接串
+    var bstatic;//是否为静态链接：true:false
+    var cpicture;//如果有图片，&pid=
+    var ddate;//日期，YYYY.mm.dd HH:MM,自行处理
+    var ctitle;//标题
+}
+
+function ellipTitle(str,n)
+{
+var ilen = str.length;
+if(ilen*2 <= n) return str;
+n -= 3;
+var i = 0;
+while(i < ilen && n > 0)
+{
+if(escape(str.charAt(i)).length>4) n--;
+n--;
+i++;
+}
+if( n > 0) return str;
+return str.substring(0,i)+"...";
+}
+
+var str="";
+var o;
+var mem_item = 0;//实际返回的数据
+var mem_aiID = new Array();
+var mem_acTitle = new Array();
+var mem_acKind = new Array();
+var mem_acDate = new Array();
+var xq_kind1="新闻公告";
+var xq_ckind=xq_kind1;
+
+var request = false;
+try {request = new XMLHttpRequest();} 
+catch (trymicrosoft) {
+try{request = new ActiveXObject('Msxml2.XMLHTTP');}
+catch (othermicrosoft) {
+try{request = new ActiveXObject('Microsoft.XMLHTTP');}
+catch (failed){request = false;}}}
+
+
+function QueryMemInfo(){
+var url = "/cgi-bin/GInfo.dll?ajxMemInfoKind&w=au-express&ckind="+xq_ckind+"&inum=15";
+request.open("GET", url, true);
+request.onreadystatechange = QueryMemInfoOK;
+request.send(null);}
+
+function QueryMemInfoOK()
+{
+	if (request.readyState == 4)
+	{
+		if (request.status == 200)
+		{
+			var response = request.responseText.split("|");
+			//if(response[0]<=0){ MemInfo.innerHTML=response[0]; return;}
+			mem_item=parseInt(response[0]);
+			eval(response[1].replace(/&#124;/g,"|"));
+			UpdateMemoInfo();
+		}
+	}
+}
+
+function UpdateMemoInfo()
+{	
+	var om=null;
+	//if(xq_ckind == xq_kind1) 	om=document.getElementById("MemInfo1");
+	//else 						om=document.getElementById("MemInfo2");
+	om=document.getElementById("MemInfo1");
+	if(om == null) return ;
+	
+	//if(mem_item==0) {xq_ckind = xq_kind2;QueryMemInfo();}
+	if(mem_item==0) return ;
+	for(i=0;i<mem_item;i++)
+	{
+		str	 +=	"<div id='newsBox'>";
+		str	 +="<div id='newsList'>";
+		str += "<a href='";
+		str += "/cgi-bin/GInfo.dll?DispMemInfo&w=au-express&nid=";
+		str += mem_aiID[i];
+		str += "' target='_blank' class='newsList'>";
+		str +=	 ellipTitle(mem_acTitle[i],65);
+		str +=	 "</a></div>";
+		str += "</div>";
+	}
+	
+	om.innerHTML=str;
+	new Marquee("textdiv",0,1,320,60,20,2000,500);
+	return ;
+}
+</script>
+</head>
+
+<body >
+<table width="320" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="fblack">
+	 
+<DIV style="TEXT-ALIGN: left; WIDTH: 320px; HEIGHT: 60px; OVERFLOW: hidden;" id=textdiv>
+ <div  id="MemInfo1"></div>
+</DIV>
+</td>
+  </tr>
+</table>
+
+</body>
+</html>
+<SCRIPT defer>
+QueryMemInfo();
+</SCRIPT>

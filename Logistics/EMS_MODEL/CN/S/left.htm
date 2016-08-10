@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+
+<link href="/EMS_MODEL/css/main.css" rel="stylesheet" type="text/css">
+<link href="/EMS_MODEL/css/exCSS.css" rel="stylesheet" type="text/css" />
+
+
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	background-image: url(/EMS_MODEL/pic/Lbg.jpg);
+	background-repeat: repeat-y;
+	background-position: left top;
+}
+-->
+</style>
+<script language='javascript' type='text/javascript'> 
+function logout()
+{
+	parent.window.location.replace("http://www.au-express.com");
+
+}
+</script>
+</head>
+
+<body>
+<table width="178" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="178"><div id="kind"><dd><img src="/EMS_MODEL/pic/ic1.png" width="24" height="20" vspace="0" /></dd> <dd>网上录单</dd></div></td>
+  </tr>
+  <tr>
+    <td><div id="divQuick">
+      <ul>
+       <li><a href="/EMS_MODEL/CN/M/iOfferInput.htm" target='main'>iOffer订单</a></li>
+       <li><a href="/cgi-bin/GInfo.dll?RecPreInputSetForm&amp;w=au-express" target='main'>单票件录入</a></li>
+	  <li><a href="/EMS_MODEL/CN/S/upload.htm" target='main'>批量导入订单</a></li>
+	  <li><a href="/cgi-bin/GInfo.dll?RecPreInputList&amp;w=au-express&nper=100" target='main'>待发货/处理列表</a></li>
+      <li><a href="/cgi-bin/GInfo.dll?EmmisMemoForm&w=au-express" target='main'>已发货列表</a></li>
+      </ul>
+    </div></td>
+  </tr>
+
+    <tr>
+    <td width="178"><div id="kind"><dd><img src="/EMS_MODEL/pic/ic2.png" width="24" height="18" vspace="0" /></dd> <dd>账单查询</dd></div></td>
+  </tr>
+  <tr>
+    <td><div id="divQuick">
+      <ul>
+	  <li><a href="/cgi-bin/GInfo.dll?EmmisListForm&w=au-express" target="main">帐单查询</a></li>
+	  <li><a href="/EMS_MODEL/CN/S/moneyInpour.htm" target="main">在线充值</a></li>
+	  <li><a href="/cgi-bin/GInfo.dll?EmmisFeeList&w=au-express" target="main">交款记录查询</a></li>
+      </ul>
+    </div></td>
+  </tr>
+  <tr>
+    <td width="178"><div id="kind"  style="cursor:pointer" onclick="window.open('/cgi-bin/GInfo.dll?EmmisMemoForm&w=au-express','main')"><dd><img src="/EMS_MODEL/pic/ic3.png" width="24" height="16" vspace="0" /></dd> <dd>跟踪快件状态</dd></div></td>
+  </tr>
+   <tr>
+    <td width="178"><div id="kind"  style="cursor:pointer" onclick="window.open('/cgi-bin/GInfo.dll?EmmisListError&w=au-express','main')"><dd><img src="/EMS_MODEL/pic/ic4.png" width="24" height="18" vspace="0" /></dd> <dd>问题件处理</dd></div></td>
+  </tr>
+ <tr>
+   <td width="178"><div id="kind"><dd><img src="/EMS_MODEL/pic/ic5.png" width="24" height="20" vspace="0" /></dd> <dd>个人设置</dd></div></td>
+  </tr>
+      <tr>
+    <td><div id="divQuick">
+      <ul>
+	  <li><a href="/cgi-bin/GInfo.dll?MemPasswordModForm&w=au-express" target="main">修改密码</a></li>
+       <li><a href="/cgi-bin/GInfo.dll?ClientInfoModForm&w=au-express" target="main">修改账户资料</a></li>
+       <li><a href="/EMS_MODEL/CN/S/ADDRESS_SRI.htm" target="main">收件地址管理</a></li></ul>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td><div id="kind"  style="cursor:pointer" onclick="javascript:logout();"><dd><img src="/EMS_MODEL/pic/ic6.png" width="24" height="22" vspace="0" /></dd> <dd>退出系统</dd></div></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link href="/EMS_MODEL/css/main.css" rel="stylesheet" type="text/css">
+<link href="/EMS_MODEL/css/exCSS.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/EMS_MODEL/js/info.js"></script>
+
+<style type="text/css">
+<!--
+body {
+	margin-right: 0px;
+}
+#Numlist li {
+	float: left;
+	margin-right: 10px;
+}
+#kind a {
+	color: #FFFFFF;
+	text-decoration: none;
+	display: block;
+	cursor: pointer;
+}
+.posiTxt {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+-->
+</style>
+<script language='javascript' type='text/javascript'>
+var request = false;
+try {request = new XMLHttpRequest();} 
+catch (trymicrosoft) {
+try{request = new ActiveXObject('Msxml2.XMLHTTP');}
+catch (othermicrosoft) {
+try{request = new ActiveXObject('Microsoft.XMLHTTP');}
+catch (failed){request = false;}}}
+
+function delAddress(iid){
+	var url ="/cgi-bin/GInfo.dll?ajxEmsSRIDel&w=au-express&iid="+iid; 
+	request.open("GET", url, true);
+	request.onreadystatechange = delAddressOK;
+	request.send(null);
+	}
+function delAddressOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+var response = request.responseText.split("|");
+if(response[0]<0) {alert(response[1]);return ;}
+QueryData('','','','','','','');;
+return ;
+}}}
+
+function QueryData(num,cname,cunit,caddr,cpost,cphone,cmark)
+{
+
+	var url = '/cgi-bin/GInfo.dll?ajxEmsSRIList&w=au-express&ikind=100&nc=200&ntype=0&calpha='+num+'&cname='+cname+'&cunit='+cunit+'&caddr='+caddr+'&cpost='+cpost+'&cphone='+cphone+'&cmark='+cmark;
+	request.open('GET', url, true);
+	request.onreadystatechange = QueryDataOK;
+	request.setRequestHeader("If-Modified-Since","0");
+	request.send(null);
+	}
+
+function QueryDataOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+eval("var res = " +request.responseText);
+if (res.ReturnValue!=100) { addrData.innerHTML="未检索到结果。"; return; };
+var n=0;
+var str='<tr class="emmisListEven"><td><table width="100%" border="0" align="left" cellpadding="2" cellspacing="1"  bgcolor="#556d9b" >';
+     str+='<tr class="recPreInputListTitle">';
+     str+='<td align="center">发件人姓名</td>';
+     str+='<td align="center">发件人别名</td>';
+     str+='<td align="center">发件人身份证或发件公司名称</td>';
+     str+='<td align="center">发件人地址</td>';
+     str+='<td align="center">发件人电话</td>';
+     str+='<td align="center">修改或删除</td>';
+     str+='</tr>';
+for(var i=0;i<200;i++)
+{
+	str+='<tr class="';
+	if(i%2!=0) str+= 'recPreInputListOdd';
+	else str+= 'emmisListEven';
+	str+='">';
+	str+='<td align="center">'+res.RecList[i].cName+'</td>';
+	str+='<td align="center">'+res.RecList[i].cMark+'</td>';
+	str+='<td align="center">'+res.RecList[i].cUnit+'</td>';
+	str+='<td align="center">'+res.RecList[i].cAddr+'</td>';
+	str+='<td align="center">'+res.RecList[i].cPhone+'</td>';
+	str+='<td align="center">'+'<a href="/cgi-bin/GInfo.dll?SRISetForm&w=au-express&ikind=0&ntype=0&iid='+res.RecList[i].iID+'" target="main">修改</a>'+' | <a href="javascript:delAddress('+res.RecList[i].iID+');" target="main">删除</a></td>';
+	str+='</tr>';
+}
+addrData.innerHTML=str;
+return ;}}}
+</script>
+</head>
+
+<body onload="QueryData('','','','','','','');" >
+<table width="900" border="0" cellspacing="0" cellpadding="0" style="margin-top:25px; background-image: url(/EMS_MODEL/pic/ADDRESS_03.jpg); background-position:left 20px; background-repeat:no-repeat" id="tdline">
+  <tr>
+    <td align="center" valign="top">
+       
+          <table width="95%" border="0" align="center" cellpadding="0" cellspacing="4">
+            <tr>
+              <td><div class="posiTxt">发件人通讯录</div></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="10">
+                <tr>
+                  <td align="left" class="f14black">发件人搜索：</td>
+                </tr>
+                <tr>
+                  <td><form id="theForm" name="theForm" method="post" action=""><table width="100%" border="0" cellspacing="4" cellpadding="0">
+                    <tr>
+                      <td width="11%" align="right">发件人姓名</td>
+                      <td width="15%" align="left"><input name="cname" type="text" class="input_login" /></td>
+                      <td width="13%" align="right">发件公司名称</td>
+                      <td width="32%" align="left"><input type="text" name="cunit" class="input_login"  /></td>
+                      <td width="11%" align="right">发件人电话</td>
+                      <td width="18%" align="left"><input type="text" name="cphone" class="input_login"  /></td>
+                    </tr>
+                    <tr>
+                      <td align="right">发件人别名</td>
+                      <td align="left"><input type="text" name="cmark" class="input_login" /></td>
+                      <td align="right">发件人地址</td>
+                      <td align="left"><input type="text" name="caddr"  class="input_login" /></td>
+                      <td align="right">发件人邮编</td>
+                      <td align="left"><input type="text" name="cpost"  class="input_login" /></td>
+                    </tr>
+                  </table>
+                    
+                    </form>
+                  </td>
+                </tr>
+                <tr>
+                  <td><button  type="submit" class='btn btn-primary' value="搜索发件人" onclick="QueryData('',theForm.cname.value,theForm.cunit.value,theForm.caddr.value,theForm.cpost.value,theForm.cphone.value,theForm.cmark.value);">搜索发件人</button></td>
+                </tr>
+              </table></td>
+    </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="10">
+                <tr>
+                  <td align="left" class="f14black">发件人姓名拼音和字母排序：</td>
+                </tr>
+                <tr>
+                  <td valign="top"><div  id="Numlist">
+                          <ul>
+                            <li><a href="javascript:QueryData('','','','','','','');">全部</a> </li>
+							<li><a href="javascript:QueryData('A','','','','','','');">A</a> |</li>
+							<li><a href="javascript:QueryData('B','','','','','','');">B</a> |</li>
+							<li><a href="javascript:QueryData('C','','','','','','');">C</a> |</li>
+							<li><a href="javascript:QueryData('D','','','','','','');">D</a> |</li>
+							<li><a href="javascript:QueryData('E','','','','','','');">E</a> |</li>
+							<li><a href="javascript:QueryData('R','','','','','','');">R</a> |</li>
+							<li><a href="javascript:QueryData('G','','','','','','');">G</a> |</li>  
+							<li><a href="javascript:QueryData('H','','','','','','');">H</a> |</li>
+							<li><a href="javascript:QueryData('I','','','','','','');">I</a> |</li>
+							<li><a href="javascript:QueryData('J','','','','','','');">J</a> |</li>
+							<li><a href="javascript:QueryData('K','','','','','','');">K</a> |</li>
+							<li><a href="javascript:QueryData('L','','','','','','');">L</a> |</li>
+							<li><a href="javascript:QueryData('M','','','','','','');">M</a> |</li>
+							<li><a href="javascript:QueryData('N','','','','','','');">N</a> |</li>
+							<li><a href="javascript:QueryData('O','','','','','','');">O</a> |</li>
+							<li><a href="javascript:QueryData('P','','','','','','');">P</a> |</li>
+							<li><a href="javascript:QueryData('Q','','','','','','');">Q</a> |</li>
+							<li><a href="javascript:QueryData('R','','','','','','');">R</a> |</li>
+							<li><a href="javascript:QueryData('S','','','','','','');">S</a> |</li>
+							<li><a href="javascript:QueryData('T','','','','','','');">T</a> |</li>
+							<li><a href="javascript:QueryData('U','','','','','','');">U</a> |</li> 
+							<li><a href="javascript:QueryData('V','','','','','','');">V</a> |</li>
+							<li><a href="javascript:QueryData('W','','','','','','');">W</a> |</li>
+							<li><a href="javascript:QueryData('X','','','','','','');">X</a> |</li>
+							<li><a href="javascript:QueryData('Y','','','','','','');">Y</a> |</li>
+							<li><a href="javascript:QueryData('Z','','','','','','');">Z</a></li>
+                          </ul>
+                        </div>
+				  </td>
+                </tr>
+                  </table></td>
+            </tr>
+                <tr>
+                  <td height="60" align="left" bgcolor="#FFFFFF"><div id="addrData"></div></td>
+                </tr>
+                <tr>
+                  <td height="60" align="left" bgcolor="#FFFFFF"><div class="buttonc0">
+                <button  type="button" class='btn btn-primary' onclick="window.open('/cgi-bin/GInfo.dll?SRISetForm&w=au-express&ntype=0','main');">添加新发件人信息</button>
+              </div></td>
+                </tr>
+      </table></td>
+  </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"></td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF"></td>
+    </tr>
+</table>
+</td>
+  </tr>
+</table>
+</body>
+</html>

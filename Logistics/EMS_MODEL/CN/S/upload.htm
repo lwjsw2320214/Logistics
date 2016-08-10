@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+.tit{font-size:14px;line-height:20px;font-weight:800;color:#008000}
+.button1{font-size:12px;Height:13pt;clip:rect();
+border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;
+border-left-width: 1px;border-top-style: solid;
+border-right-style: solid;border-bottom-style: solid;border-left-style: solid;
+BACKGROUND-COLOR:#E7E7E7;border-top-color:#CCCCCC;border-left-color: #CCCCCC;}
+.sblue{color:blue;cursor:hand}
+#tbBG {
+	line-height: 22px;
+	margin-bottom: 5px;
+}
+#table1 {
+	padding: 3px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: #FFFFFF;
+	border: 1px solid #9DC2D4;
+	color: #87B4C9;
+}
+.f12blue {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #87B4C9;
+	text-decoration: underline;
+}
+.f12blue3 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #87b4c9;
+	text-decoration: none;
+}
+
+
+.myinput{
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	width: 200px;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+}
+.input1 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 250px;
+}
+.input2 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 80px;
+}
+.input3 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 40px;
+}
+.f12blue3 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #61A6CB;
+	text-decoration: none;
+	cursor: pointer;
+	line-height: 20px;
+}
+
+.myinput2 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	width: 300px;
+}
+#txtKind {
+	color: #444444;
+	text-align: left;
+	height: 33px;
+	font-size: 14px;
+	cursor: pointer;
+	padding-left: 03px;
+	line-height: 33px;
+	font-weight: bold;
+}
+.f12blue2 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #005EA7;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.btn{
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	font-size: 14px;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-right: 2px;
+	padding-top: 3px;
+	padding-right: 12px;
+	padding-bottom: 3px;
+	padding-left: 12px;
+	margin-left: 2px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}.btn:focus,.btn:active:focus,.btn.active:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.btn:hover,.btn:focus{color:#333;text-decoration:none}.btn:active,.btn.active{
+	outline: 0;
+	background-image: none;
+	-webkit-box-shadow: inset 0px 3px 5px rgba(0,0,0,.125);
+	box-shadow: inset 0px 3px 5px rgba(0,0,0,.125)
+}.btn.disabled,.btn[disabled],fieldset[disabled] .btn{cursor:not-allowed;pointer-events:none;opacity:.65;filter:alpha(opacity=65);-webkit-box-shadow:none;box-shadow:none}.btn-primary{
+	color: #fff;
+	background-color: #0274C8;
+	border-top-color: #444444;
+	border-right-color: #444444;
+	border-bottom-color: #444444;
+	border-left-color: #444444;
+}.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{
+	color: #fff;
+	background-color: #0283E1;
+	border-color: #000
+}.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{background-image:none}.btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active{background-color:#428bca;border-color:#357ebd}.btn-primary .badge{color:#428bca;background-color:#fff}
+
+#tbLine {
+	border: 1px dashed #b7d2df;
+	background-color: #f8fbfc;
+}
+td {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.f12gray {
+	color: #666666;
+	text-decoration: none;
+	line-height: 20px;
+}
+ａ.f12gray:visited {
+	color: #999999;
+	text-decoration: none;
+}
+ａ.f12gray:hover {
+	color: #999999;
+	text-decoration: underline;
+}
+.fred {
+	color: #FF0000;
+}
+.mytextarea {
+	width: 250px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	border-left-color: #9dc2d4;
+}
+.myMemo {
+	width: 500px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	border-left-color: #9dc2d4;
+}
+
+.bt_save {
+	background-image: url(/orderPic/bt_save.jpg);
+	background-repeat: no-repeat;
+	height: 35px;
+	width: 149px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	cursor: pointer;
+}
+.bt_prt {
+	background-image: url(/orderPic/bt_prt.jpg);
+	background-repeat: no-repeat;
+	height: 35px;
+	width: 149px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.myinput3 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	width: 30px;
+}
+ .myinput4 {
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #9dc2d4;
+	border-left-color: #9dc2d4;
+	border-right-color: #B7D2DF;
+	border-bottom-color: #B7D2DF;
+	background-color:#E8E8E8;
+	width: 150px;
+}
+.cydz{overflow:hidden; margin-bottom:7px;border:#B7D2DF dotted 1px; color:#87B4C9;background:#F8FBFC;padding:5px 0 5px 10px;width:80%}
+
+.cydz li{width:99%;display:block;  margin-right:7px;  border:#F8FBFC dotted 1px; color:#87B4C9; padding-left:2px; overflow:hidden;}
+.cydz li.xz{color:#F8AA27; background:#FFFAEE; border:#F9BA53 dotted 1px}
+.cydz .remark{color:Gray;}
+.cydz td{padding:0px;}
+
+#table1 td {
+	color: #87B4C9;
+}
+.f12B {
+	font-weight: bold;
+	color: #444444;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#txtGray {
+	color: #999999;
+	line-height: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+</style>
+<script language='javascript' type='text/javascript'> 
+var request = false;
+try {request = new XMLHttpRequest();} 
+catch (trymicrosoft) {
+try{request = new ActiveXObject('Msxml2.XMLHTTP');}
+catch (othermicrosoft) {
+try{request = new ActiveXObject('Microsoft.XMLHTTP');}
+catch (failed){request = false;}}}
+
+function QueryEmskind(){
+var url = "/cgi-bin/GInfo.dll?ajxEmsQueryEmsKind&w=au-express";
+request.open("GET", url, true);
+request.onreadystatechange = QueryEmskindOK;
+request.setRequestHeader("If-Modified-Since","0");
+request.send(null);}
+
+function QueryEmskindOK(){
+if (request.readyState == 4){
+if (request.status == 200){
+eval("var res = " +request.responseText);
+if (res.ReturnValue<=0) { oemskind.innerHTML="未检索到结果。"; return; };
+
+ 	var str="<select size=1 name='cemskind' id='cemskind'><option value='' selected>--请选择--</option>";
+	for(var i=0;i<res.ReturnValue;i++)
+		{
+			str+="<option value='";
+			str+=res.List[i].oName;
+			str+="'>";
+			str+=res.List[i].cName;
+			str+="</option>";
+			
+		}
+	
+	str+="</select>";
+	var o = document.getElementById("oemskind");
+	if(o == null) return ;
+	o.innerHTML=str;
+	FillEmsModel();
+return ;}}}
+
+function pre_submit(){
+var o = document.getElementById("cemskind");
+if(o.value=="") {alert("请选择快递类别");return false;}
+}
+function FillEmsModel()
+{	
+var irandom=parseInt(Math.random()*10000000);
+var url = "/cgi-bin/GInfo.dll?ajxClientDefineList&w=au-express&ntype=0&r="+irandom;
+request.open("GET", url, true);
+request.onreadystatechange = FillEmsModelOK;
+request.setRequestHeader("If-Modified-Since","0");
+request.send(null);}
+
+function FillEmsModelOK(){
+if(request.readyState == 4){
+if(request.status == 200){
+eval("var res = " +request.responseText);
+if(res.ReturnValue <= 0) return;
+ 	var str="<select  name='iID_FieldsMap' id='iID_FieldsMap'><option value='' selected>选择已经定义的客户上传模板</option>";
+	for(i=0;i<res.iTotalRec;i++)
+		{
+			str+="<option value='";
+			str+=res.RecList[i].iID;
+			str+="'>";
+			str+=res.RecList[i].cName;
+			str+="</option>";
+			
+		}
+	str+="</select>";
+	o = document.getElementById("oemsModel");
+	if(o == null) return ;
+	o.innerHTML=str;
+	//QueryEmskind();
+}}}
+
+ </script>
+</head>
+
+<body  onload="QueryEmskind();">
+<table width="780" border="0" cellpadding="5" cellspacing="1" bgcolor="#BDBCBD">
+  <tr>
+    <td bgcolor="#F5F5F5"><img src="/EMS_MODEL/pic/input01.gif" width="18" height="18" hspace="5" align="absmiddle" /><span class="f12B">当前位置：</span>会员首页 > 批量上传录单</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F5F5F5"><table width="760" border="0" cellspacing="5" cellpadding="0">
+      <tr>
+        <td bgcolor="#e3e3e3"><table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td width="50%" align="center" valign="top"><table width="80%" border="0" cellspacing="5" cellpadding="0">
+              <tr>
+                <td align="left"><div id="txtKind">第一步：下载上传模板</div></td>
+              </tr>
+              <tr>
+                <td align="center">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="center"><button type="button" class='btn btn-primary' onclick="window.open('/InputModel.xls')">下载EXCEL格式模板</button></td>
+              </tr>
+              <tr>
+                <td align="center"><button type="button" class='btn btn-primary' onclick="window.open('/InputModel.csv')">下载CSV格式模板</button></td>
+              </tr>
+            </table></td>
+            <td width="50%" class="f12gray">1.请选择系统提供的下载模板，我们提供的是EXCEL格式模板和CSV格式模板；<br />
+说明：如何将Excel文档保存为CSV格式？<br />
+打开EXCEL文件后，选择菜单栏上的“文件”-“另存为”，在弹出的框最下方“保存类型”中直接选为“CSV”格式就可以了。<br />
+2.因为网络速度和服务器负载等因素，建议您一次导入的业务记录不要超过50条。</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td bgcolor="#e3e3e3"><form method='POST' action='/cgi-bin/GInfo.dll?RecPreInputUpload' target='theNote' enctype='multipart/form-data' id='theForm'><input TYPE='hidden' NAME='w' VALUE='au-express'>
+		<input type='hidden' name='iidnum' value=0 id="iidnum">
+		<table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+            <td width="50%" align="center" valign="top"><table width="80%" border="0" cellspacing="5" cellpadding="0">
+                <tr>
+                  <td align="left"><div id="txtKind">第二步：数据文件上传导入</div></td>
+                </tr>
+                <tr>
+                  <td height="22" align="left">选择需要使用的模版：<span  id="oemsModel">
+                    <select name="iID_FieldsMap" id="iID_FieldsMap" onchange="">
+                      <option value='0' selected="selected">------请选择------</option>
+                    </select>
+                  </span></td>
+                </tr>
+                <tr>
+                  <td height="22" align="left">快递类别：<span id="oemskind"></span>
+                    </td>
+                </tr>
+                <tr>
+                  <td height="22" align="left"><span class="fred">*</span>选择整理好的EXCEL或者CSV数据文件：</td>
+                </tr>
+                <tr>
+                  <td height="30" align="left"><input name=file1 type=file class="myinput2" size=70></td>
+                </tr>
+                <tr>
+                  <td height="30" align="left"><button  type="submit" class='btn btn-primary'>上 传</button> </td>
+                </tr>
+                <tr>
+                  <td align="left">&nbsp;</td>
+                </tr>
+            </table></td>
+            <td width="50%" valign="top" class="f12gray"><IFRAME frameBorder=0 height=400 marginHeight=0 marginWidth=0  width=360 name='theNote' id='theNote' class='contc' SCROLLING=YES></IFRAME></td>
+          </tr>
+        </table>
+		</form>
+		</td>
+      </tr>
+
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
