@@ -187,6 +187,7 @@
     <Content Include="EMS_MODEL\pic\zfb.gif" />
     <Content Include="Logistic.aspx" />
     <Content Include="WebApi.aspx" />
+    <None Include="Properties\PublishProfiles\物流发布.pubxml" />
     <None Include="Service References\SFService\configuration91.svcinfo" />
     <None Include="Service References\SFService\configuration.svcinfo" />
     <None Include="Service References\SFService\Reference.svcmap">
@@ -284,11 +285,6 @@
     <Content Include="EMS_MODEL\CN\M\_notes\emstab.htm.mno" />
     <Content Include="EMS_MODEL\CN\S\_notes\left.htm.mno" />
     <Content Include="EMS_MODEL\CN\S\_notes\top.htm.mno" />
-    <Content Include="EMS_MODEL\emsprice\pic\Thumbs.db" />
-    <Content Include="EMS_MODEL\My97DatePicker\skin\default\Thumbs.db" />
-    <Content Include="EMS_MODEL\My97DatePicker\skin\Thumbs.db" />
-    <Content Include="EMS_MODEL\My97DatePicker\skin\whyGreen\Thumbs.db" />
-    <None Include="Properties\PublishProfiles\物流.pubxml" />
     <None Include="Service References\SFService\CommonExpressServiceService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

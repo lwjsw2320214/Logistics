@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\res</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ajax.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="bin/common.dll">
+      <publishTime>08/29/2016 20:59:19</publishTime>
+    </File>
+    <File Include="bin/Dao.dll">
+      <publishTime>08/29/2016 20:15:25</publishTime>
+    </File>
+    <File Include="bin/DBUtility.dll">
+      <publishTime>08/29/2016 20:15:25</publishTime>
+    </File>
+    <File Include="bin/Entity.dll">
+      <publishTime>08/29/2016 20:15:25</publishTime>
+    </File>
+    <File Include="bin/Logistics.dll">
+      <publishTime>08/29/2016 20:59:19</publishTime>
+    </File>
+    <File Include="bin/Service.dll">
+      <publishTime>08/29/2016 20:15:26</publishTime>
+    </File>
+    <File Include="CheckArea.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="ClienPassWord.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="CourierNumber.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="CourierNumberAdd.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="delete.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/batchInv.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/batchLab.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/batchTab.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/emsinv.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/emslab.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/emslab_minBag.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/emsprice.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/emstab.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/FEE_LIST_RESULT.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/input.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/iOfferInput.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/LIST_RESULT.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/MEMO_LIST_RESULT.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/PREINPUT_LIST_RESULT.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/QUERY_PRICE_RESULT.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/SRI_INPUT.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/SRI_LIST_RESULT.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/start.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/M/_notes/emstab.htm.mno">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/ADDRESS_SRI.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/ADDRESS_SRI_SENDER.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/CLIENT_INFO_MOD_FORM.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/HTML.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/html.html">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/left.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/left11.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/LIST_FORM.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/MEMO_LIST_FORM.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/MOD_PASSWORD.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/moneyInpour.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/pic.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/QUERY_PRICE_FORM.HTM">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/top.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/upload.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/_notes/left.htm.mno">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/CN/S/_notes/top.htm.mno">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/css/autocomplete.css">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/css/base.css">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/css/exCSS.css">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/css/main.css">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/js_iq/jquery.colorize-2.0.0.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/js_iq/jquery.min.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/arr_R.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/asc.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/attention.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/calculator.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/desc.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/input01.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/mainPrice07.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/mainPrice09.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/mainPrice11.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/no.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/start35-.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/pic/yes.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/emsprice/Scripts/AC_RunActiveContent.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/jquery-1.12.3.min.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/autoComplete.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/autoinput.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/dsdialog.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/info.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/jquery-1.7.min.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/morecity - 副本.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/morecity.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/MSClass.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/js/tab.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/calendar.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/config.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/lang/en.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/lang/zh-cn.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/My97DatePicker.htm">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/skin/datePicker.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/skin/default/datepicker.css">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/skin/default/img.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/skin/WdatePicker.css">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/skin/whyGreen/bg.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/skin/whyGreen/datepicker.css">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/skin/whyGreen/img.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/My97DatePicker/WdatePicker.js">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/1.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/alipay.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/arrow_red.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/bg.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/bt.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/btBG.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/BTbg2.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/btn.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/btnL.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/err.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/help.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ic1.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ic2.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ic3.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ic4.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ic5.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ic6.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ic7.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/icon.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/idsample.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/input01.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/input01.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/input02.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/Lbg.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_02.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_03.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_05.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_06.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_07.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_09.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_11.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_12.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_13.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/login_19.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/logo.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/logo.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/main_23.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/main_25.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/paypal_logo.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/ser2.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/start18.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/start22.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/start25.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/start48.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/start_16.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/start_50.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/start_51.jpg">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/tenpay.png">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="EMS_MODEL/pic/zfb.gif">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="Logistic.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="SettingPassWord.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="SynchronousOrder.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/29/2016 20:32:00</publishTime>
+    </File>
+    <File Include="WebApi.aspx">
+      <publishTime>08/26/2016 19:18:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

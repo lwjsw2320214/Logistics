@@ -8,6 +8,7 @@ using Service;
 using Entity;
 using System.Text;
 using common;
+using System.Xml;
 
 namespace Logistics
 {
@@ -32,7 +33,7 @@ namespace Logistics
             if (!IsPostBack) {
                 emsList = emsKindService.getAll();
                 icid = cookiesUtil.getCookie("GInfo_999_Vali"); 
-
+ 
                 int.TryParse(Request.QueryString["page"], out page); 
 
                 var cemskind = Request.QueryString["cemskind"];

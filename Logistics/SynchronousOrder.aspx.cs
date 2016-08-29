@@ -53,9 +53,8 @@ namespace Logistics
                 try
                 {
                     lock (_obj)
-                    {
-
-                        SFXMLMosaic sfxmlMosaic = new SFXMLMosaic();
+                    {  
+                         
                         foreach (var r in re)
                         {
                             if (r.nitemtype == 0)
@@ -63,16 +62,15 @@ namespace Logistics
 
                                 continue;
                             }
-
+                            XmlDocument xmlDocument = new XmlDocument();
                             if ("顺丰快递".Equals(extype))
                             {
+                                SFXMLMosaic sfxmlMosaic = new SFXMLMosaic();
                                 var xmlText = sfxmlMosaic.getXML(r);
                                 var stext = sfxmlMosaic.getXMLCheck(sfxmlMosaic.getXML(r));
-
                                 SFService.ExpressServiceClient client = new SFService.ExpressServiceClient();
-
                                 var t = client.sfexpressService(xmlText, stext);
-                                XmlDocument xmlDocument = new XmlDocument();
+
                                 xmlDocument.LoadXml(t);
                                 XmlNode node = xmlDocument.SelectSingleNode("/Response/Head");
                                 var head = node.InnerText;
@@ -93,6 +91,34 @@ namespace Logistics
                                         i++;
                                     }
                                 }
+                            }
+                            else if ("圆通快递".Equals(extype))
+                            {
+                                YTOParameter yTOParameter = new YTOParameter();
+                                var p = yTOParameter.PostParameter(r);
+                                YTONetWorkConnect nc = new YTONetWorkConnect();
+                                var c = nc.PostConnect(p);
+                                LogWrite.WriteLog(c);
+                                xmlDocument.LoadXml(c);
+                                XmlNode node = xmlDocument.SelectSingleNode("/Response/success");
+                                var head = node.InnerText;
+                                if (head == "true")
+                                {
+                                    //原始订单
+                                    XmlNode orderXml = xmlDocument.SelectSingleNode("/Response/txLogisticID");
+                                    var orderid = orderXml.InnerText;
+                                    //圆通快递号
+                                    var mailno = xmlDocument.SelectSingleNode("/Response/mailNo").InnerText;
+                                    //三段号
+                                    var destcode = xmlDocument.SelectSingleNode("/Response/distributeInfo/shortAddress").InnerText;
+                                    //更新快递单
+                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype);
+                                    if (count > 0)
+                                    {
+                                        i++;
+                                    }
+                                }
+
                             }
                             else if (!string.IsNullOrEmpty(extype))
                             {

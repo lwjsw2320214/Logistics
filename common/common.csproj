@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CookiesUtil.cs" />
+    <Compile Include="LogisticsEncryption.cs" />
+    <Compile Include="LogWrite.cs" />
+    <Compile Include="YTONetWorkConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SFXMLMosaic.cs" />
+    <Compile Include="YTOParameter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">

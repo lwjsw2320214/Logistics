@@ -76,19 +76,14 @@ namespace common
         /// <param name="r"></param>
         /// <returns></returns>
         public string getXMLCheck(string d)
-        {  
+        {
+            LogisticsEncryption le = new LogisticsEncryption();
             d += "Vfk34nZpjzx9fYTPKFuklV6AiaId1nIg";
-            var sc = Md5Basece64(d);
+            var sc =le.Md5Basece64(d);
             return sc;
         }
 
-        public string Md5Basece64(string content)
-        {
-            System.Security.Cryptography.MD5CryptoServiceProvider MD5CSP = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            byte[] MD5Source = System.Text.Encoding.UTF8.GetBytes(content);
-            byte[] MD5Out = MD5CSP.ComputeHash(MD5Source);
-            return Convert.ToBase64String(MD5Out);
-        }
+
 
     }
 }
