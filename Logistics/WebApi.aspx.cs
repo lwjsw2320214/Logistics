@@ -97,7 +97,7 @@ namespace Logistics
                                     //区域代码
                                     var destcode = nodAttribute["destcode"].Value;
                                     //更新快递单
-                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype);
+                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype,r.iid.Value);
                                     if (count > 0)
                                     {
                                         i++;
@@ -115,7 +115,7 @@ namespace Logistics
                                     var orderid = r.cnum;
                                     var mailno = courierNumber.courierNumber;
                                     var destcode = r.cdes;
-                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype);
+                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype,r.iid.Value);
                                     var ncount = courierNumberService.update(courierNumber.id, userName);
                                     if (ncount > 0)
                                     {

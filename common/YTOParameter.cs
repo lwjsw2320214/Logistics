@@ -54,7 +54,7 @@ namespace common
             sb.Append("<clientID>" + clientID + "</clientID>");
             sb.Append("<logisticProviderID>YTO</logisticProviderID>");
             sb.Append("<customerId>" + clientID + "</customerId>");
-            sb.Append("<txLogisticID>" + re.cnum + "</txLogisticID>");
+            sb.Append("<txLogisticID>" + re.cnum +re.iid+ "</txLogisticID>");
             sb.Append("<orderType>" + orderType + "</orderType>");
             sb.Append("<serviceType>" + serviceType + "</serviceType>");
             sb.Append("<sender>");

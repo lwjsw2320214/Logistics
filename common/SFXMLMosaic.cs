@@ -40,7 +40,7 @@ namespace common
             sb.Append("<Head>0286022070</Head>");
             sb.Append("<Body>");
             //订单号
-            sb.Append("<Order orderid='" + r.cnum + "' ");
+            sb.Append("<Order orderid='" + r.cnum +r.iid+ "' ");
             //sb.Append("<Order orderid='BB123456555525' ");
             sb.Append("j_company='" + j_company + "' ");
             sb.Append("j_contact='" + j_contact + "' ");

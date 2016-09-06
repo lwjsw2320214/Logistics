@@ -99,5 +99,17 @@ namespace Service
 
             return courierNumberDao.getAllCount();
         }
+
+        /// <summary>
+        /// 获取重复订单
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="expressType"></param>
+        /// <returns></returns>
+        public int getRowCount(string number, string expressType)
+        {
+
+            return courierNumberDao.getRowCount(number, expressType);
+        }
     }
 }

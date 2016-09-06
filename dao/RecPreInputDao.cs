@@ -375,16 +375,16 @@ namespace Dao
             return rp;
         }
 
-        public int UpdateOrder(string orderid, string mailno, string destcode, string cemskind)
+        public int UpdateOrder(string orderid, string mailno, string destcode, string cemskind, int iid)
         {
 
-            var sql = "update rec_pre_input set cemskind=@cemskind ,cdes=@cdes,cnum=@cnum,state=1 where cnum=@orderid";
+            var sql = "update rec_pre_input set cemskind=@cemskind ,cdes=@cdes,cnum=@cnum,state=1 where  iid=@iid ";
 
             SqlParameter[] par = new SqlParameter[] { 
             new SqlParameter("@cemskind",cemskind),
             new SqlParameter("@cdes",destcode),
-            new SqlParameter("@cnum",mailno),
-            new SqlParameter("@orderid",orderid)
+            new SqlParameter("@cnum",mailno), 
+            new SqlParameter("@iid",iid)
             };
             return helpSql.ExecuteSql(sql, par);
 
