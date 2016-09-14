@@ -70,7 +70,7 @@ namespace Logistics
                                 var stext = sfxmlMosaic.getXMLCheck(sfxmlMosaic.getXML(r));
                                 SFService.ExpressServiceClient client = new SFService.ExpressServiceClient();
                                 var t = client.sfexpressService(xmlText, stext);
-
+                                LogWrite.WriteLog("SF",t);
                                 xmlDocument.LoadXml(t);
                                 XmlNode node = xmlDocument.SelectSingleNode("/Response/Head");
                                 var head = node.InnerText;
@@ -153,12 +153,12 @@ namespace Logistics
 
         public int getYt(XmlDocument xmlDocument, RecPreInputEntity r, int i, string extype)
         {
- 
+            
             YTOParameter yTOParameter = new YTOParameter();
             var p = yTOParameter.PostParameter(r);
             YTONetWorkConnect nc = new YTONetWorkConnect();
             var c = nc.PostConnect(p);
-            LogWrite.WriteLog(c);
+            LogWrite.WriteLog("YT",c);
             xmlDocument.LoadXml(c);
             XmlNode node = xmlDocument.SelectSingleNode("/Response/success");
             var head = node.InnerText;

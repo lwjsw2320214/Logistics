@@ -18,6 +18,14 @@ namespace common
         public string getXML(RecPreInputEntity r)
         {
 
+            //判断重量是否大于3并且小于3.6如果是就把值赋值为3
+            if (r.fweight.Value > 3 && r.fweight.Value < decimal.Parse("3.6"))
+            {
+                r.fweight = 3;
+            }
+
+            Random random = new Random();
+            int n = random.Next(1, 100);
             var j_company = ConfigurationManager.AppSettings["j_company"].ToString();
             var j_contact = ConfigurationManager.AppSettings["j_contact"].ToString();
             var j_tel = ConfigurationManager.AppSettings["j_tel"].ToString();
@@ -34,13 +42,12 @@ namespace common
             var sendstarttime = ConfigurationManager.AppSettings["sendstarttime"].ToString();
             var remark = ConfigurationManager.AppSettings["remark"].ToString();
 
-            StringBuilder sb = new StringBuilder();
-            sb.Append("<?xml version='1.0' encoding='UTF-8'?>");
+            StringBuilder sb = new StringBuilder();            sb.Append("<?xml version='1.0' encoding='UTF-8'?>");
             sb.Append("<Request service=\"OrderService\" lang=\"zh-CN\">");
             sb.Append("<Head>0286022070</Head>");
             sb.Append("<Body>");
             //订单号
-            sb.Append("<Order orderid='" + r.cnum +r.iid+ "' ");
+            sb.Append("<Order orderid='" + r.cnum +r.iid+n+ "' ");
             //sb.Append("<Order orderid='BB123456555525' ");
             sb.Append("j_company='" + j_company + "' ");
             sb.Append("j_contact='" + j_contact + "' ");

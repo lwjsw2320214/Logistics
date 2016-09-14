@@ -38,6 +38,9 @@ namespace common
 
         private string GetLogisticsInterface(RecPreInputEntity re)
         {
+
+            Random random = new Random();
+            int n = random.Next(1, 100);
             var clientID = ConfigurationManager.AppSettings["clientID"].ToString();
             var orderType = ConfigurationManager.AppSettings["orderType"].ToString();
             var serviceType = ConfigurationManager.AppSettings["serviceType"].ToString();
@@ -54,7 +57,7 @@ namespace common
             sb.Append("<clientID>" + clientID + "</clientID>");
             sb.Append("<logisticProviderID>YTO</logisticProviderID>");
             sb.Append("<customerId>" + clientID + "</customerId>");
-            sb.Append("<txLogisticID>" + re.cnum +re.iid+ "</txLogisticID>");
+            sb.Append("<txLogisticID>" + re.cnum + re.iid + n + "</txLogisticID>");
             sb.Append("<orderType>" + orderType + "</orderType>");
             sb.Append("<serviceType>" + serviceType + "</serviceType>");
             sb.Append("<sender>");

@@ -8,13 +8,13 @@ namespace common
 {
     public class LogWrite
     {
-         
-            public static void WriteLog(string error)
+
+        public static void WriteLog(string name, string error)
             {
-                WriteLog(error, null);
+                WriteLog(name, error, null);
             }
 
-            public static void WriteLog(string error, Exception ex)
+            public static void WriteLog(string name,string error, Exception ex)
             {
 
                 string dir ="D:\\log";
@@ -31,7 +31,7 @@ namespace common
                     error += ex.ToString() + System.Environment.NewLine;
                 }
 
-                string logFilePath = dir + "\\log_" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+                string logFilePath = dir + "\\" + name + "_log_" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
                 File.AppendAllText(logFilePath, error);
             }
         } 
