@@ -60,9 +60,9 @@ namespace Service
             return recPreInputDao.findById(iid, icid, irid);
         }
 
-        public int UpdateOrder(string orderid, string mailno, string destcode, string cemskind, int iid)
+        public int UpdateOrder(string orderid, string mailno, string destcode, string cemskind, int iid, decimal fweight)
         {
-            return recPreInputDao.UpdateOrder(orderid, mailno, destcode, cemskind, iid);
+            return recPreInputDao.UpdateOrder(orderid, mailno, destcode, cemskind, iid, fweight);
         }
 
         public RecPreInputEntity findOrder(int iid, int icid, int irid) {

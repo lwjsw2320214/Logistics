@@ -65,6 +65,12 @@ namespace Logistics
                             XmlDocument xmlDocument = new XmlDocument();
                             if ("顺丰快递".Equals(extype))
                             {
+                                //判断重量是否大于3并且小于3.6如果是就把值赋值为3
+                                if (r.fweight.Value > 3 && r.fweight.Value < decimal.Parse("3.6"))
+                                {
+                                    r.fweight =decimal.Parse("3.000");
+                                }
+
                                 SFXMLMosaic sfxmlMosaic = new SFXMLMosaic();
                                 var xmlText = sfxmlMosaic.getXML(r);
                                 var stext = sfxmlMosaic.getXMLCheck(sfxmlMosaic.getXML(r));
@@ -85,7 +91,7 @@ namespace Logistics
                                     //区域代码
                                     var destcode = nodAttribute["destcode"].Value;
                                     //更新快递单
-                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype,r.iid.Value);
+                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype,r.iid.Value,r.fweight.Value);
                                     if (count > 0)
                                     {
                                         i++;
@@ -107,7 +113,7 @@ namespace Logistics
                                     var orderid = r.cnum;
                                     var mailno = courierNumber.courierNumber;
                                     var destcode = r.cdes;
-                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype, r.iid.Value);
+                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype, r.iid.Value,r.fweight.Value);
                                     var ncount = courierNumberService.update(courierNumber.id, userName);
                                     if (ncount > 0)
                                     {
@@ -177,7 +183,7 @@ namespace Logistics
                    return getYt(xmlDocument,r,i,extype);
                 } 
                 //更新快递单
-                var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype, r.iid.Value);
+                var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype, r.iid.Value,r.fweight.Value);
                 if (count > 0)
                 {
                     i++;

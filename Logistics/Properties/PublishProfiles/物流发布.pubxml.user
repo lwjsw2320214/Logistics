@@ -13,22 +13,22 @@
       <publishTime>08/26/2016 19:18:46</publishTime>
     </File>
     <File Include="bin/common.dll">
-      <publishTime>09/14/2016 20:08:09</publishTime>
+      <publishTime>09/18/2016 18:37:35</publishTime>
     </File>
     <File Include="bin/Dao.dll">
-      <publishTime>09/14/2016 20:08:08</publishTime>
+      <publishTime>09/18/2016 18:37:35</publishTime>
     </File>
     <File Include="bin/DBUtility.dll">
-      <publishTime>09/14/2016 20:08:08</publishTime>
+      <publishTime>09/18/2016 18:37:35</publishTime>
     </File>
     <File Include="bin/Entity.dll">
-      <publishTime>09/14/2016 20:08:08</publishTime>
+      <publishTime>09/18/2016 18:37:35</publishTime>
     </File>
     <File Include="bin/Logistics.dll">
-      <publishTime>09/14/2016 20:08:09</publishTime>
+      <publishTime>09/18/2016 18:37:36</publishTime>
     </File>
     <File Include="bin/Service.dll">
-      <publishTime>09/14/2016 20:08:08</publishTime>
+      <publishTime>09/18/2016 18:37:35</publishTime>
     </File>
     <File Include="CheckArea.aspx">
       <publishTime>08/26/2016 19:18:46</publishTime>
@@ -436,7 +436,7 @@
       <publishTime>08/26/2016 19:18:46</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/14/2016 20:08:09</publishTime>
+      <publishTime>09/18/2016 18:37:53</publishTime>
     </File>
     <File Include="WebApi.aspx">
       <publishTime>08/26/2016 19:18:46</publishTime>
