@@ -378,7 +378,7 @@ namespace Dao
         public int UpdateOrder(string orderid, string mailno, string destcode, string cemskind, int iid, decimal fweight)
         {
 
-            var sql = "update rec_pre_input set cemskind=@cemskind ,cdes=@cdes,cnum=@cnum,fweight=@fweight,fw,state=1 where  iid=@iid ";
+            var sql = "update rec_pre_input set cemskind=@cemskind ,cdes=@cdes,cnum=@cnum,fweight=@fweight,state=1 where  iid=@iid ";
 
             SqlParameter[] par = new SqlParameter[] { 
             new SqlParameter("@cemskind",cemskind),
