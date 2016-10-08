@@ -19,10 +19,10 @@ namespace common
         {
 
             //判断重量是否大于3并且小于3.6如果是就把值赋值为3
-            if (r.fweight.Value > 3 && r.fweight.Value < decimal.Parse("3.6"))
-            {
-                r.fweight = 3;
-            }
+            //if (r.fweight.Value > 3 && r.fweight.Value < decimal.Parse("3.6"))
+            //{
+            //    r.fweight = 3;
+            //}
 
             Random random = new Random();
             int n = random.Next(1, 100);

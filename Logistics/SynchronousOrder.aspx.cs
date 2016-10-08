@@ -65,12 +65,6 @@ namespace Logistics
                             XmlDocument xmlDocument = new XmlDocument();
                             if ("顺丰快递".Equals(extype))
                             {
-                                //判断重量是否大于3并且小于3.6如果是就把值赋值为3
-                                if (r.fweight.Value > 3 && r.fweight.Value < decimal.Parse("3.6"))
-                                {
-                                    r.fweight =decimal.Parse("3.000");
-                                }
-
                                 SFXMLMosaic sfxmlMosaic = new SFXMLMosaic();
                                 var xmlText = sfxmlMosaic.getXML(r);
                                 var stext = sfxmlMosaic.getXMLCheck(sfxmlMosaic.getXML(r));
