@@ -1,10 +1,9 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logistic.aspx.cs" Inherits="Logistics.Logistic" %>
-
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logistic.aspx.cs" Inherits="Logistics.Logistic" ResponseEncoding="gb2312" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <globalization requestEncoding="gb2312" responseEncoding="gb2312" />
+    
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>快件业务预录清单</title>
 <link href="/EMS_MODEL/css/main.css" rel="stylesheet" type="text/css"/>
@@ -483,7 +482,7 @@ input {
 </script>
 </head>
 
-<body  onload="FillModel();">
+<body>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align='left'>&nbsp;</td>
@@ -496,13 +495,12 @@ input {
   </tr>
   <tr>
     <td height="110" bgcolor="#f0f0f0"  style="background-image:url(/EMS_MODEL/pic/login_03.jpg); background-position:left top; background-repeat:no-repeat">
-     <form method='get' action='Logistic.aspx' target='main'>
+     <form method='get' action='Logistic.aspx' target='main' accept-charset="utf-8">
 	<input TYPE='hidden' NAME='w' VALUE='au-express'>
 	<input TYPE='hidden' NAME='nper' VALUE='40'>
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 	    <td width="837" height="50" align="left">快递类别：<span id="oemskind"></span> 
-          　
           运 单 号：
           <input name="cnum" type="text" class="myinput" value="" />
 	       
@@ -519,7 +517,8 @@ input {
 	    <button type='submit'  class='btn btn-primary'>查询</button></td>
 	    </tr>
     </table> 
-    </form></td>
+    </form>
+    </td>
   </tr>
 </table>
  <form method='POST' action='/cgi-bin/GInfo.dll?EmsPrintBatch' id='theList' target="_blank">

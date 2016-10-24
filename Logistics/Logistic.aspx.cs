@@ -30,14 +30,15 @@ namespace Logistics
         {
             Encoding gb2312 = Encoding.GetEncoding("gb2312");
             Response.ContentEncoding = gb2312;
+            Response.Charset = "gb2312";
             if (!IsPostBack) {
                 emsList = emsKindService.getAll();
                 icid = cookiesUtil.getCookie("GInfo_999_Vali"); 
  
                 int.TryParse(Request.QueryString["page"], out page); 
 
-                var cemskind = Request.QueryString["cemskind"];
-
+                var cemskind =Request.QueryString["cemskind"];
+                Response.Write(cemskind);
                 if (!string.IsNullOrEmpty(cemskind))
                 {
                     par += "&cemskind=" + cemskind;

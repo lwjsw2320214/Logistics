@@ -25,6 +25,7 @@ namespace Logistics
         {
             Encoding gb2312 = Encoding.GetEncoding("gb2312");
             Response.ContentEncoding = gb2312;
+            Response.Charset = "gb2312";
             if (!IsPostBack)
             {
                 int icid = cookiesUtil.getCookie("GInfo_999_Vali");
@@ -40,7 +41,8 @@ namespace Logistics
                     s = -2;
                     return;
                 }
-                var extype = Server.UrlDecode(Request.QueryString["extype"].ToString()); ;//gb2312_utf8(Request.QueryString["extype"]);
+                var extype = Request.QueryString["extype"];//gb2312_utf8(Request.QueryString["extype"]);
+                Response.Write(extype);
                 var iidArray = iid.Split(',');
                 List<RecPreInputEntity> re = new List<RecPreInputEntity>();
                 foreach (var id in iidArray)
