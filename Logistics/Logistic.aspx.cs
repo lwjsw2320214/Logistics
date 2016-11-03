@@ -25,7 +25,10 @@ namespace Logistics
         protected decimal total;
         protected int pageCount = 0;
         protected int rowCount = 0;
+        protected int pageSize = 0;
         protected string par = "";
+        protected int state = 0;
+        protected int[] pageSizeList = new int[] { 100, 200, 500, 1000 };
         protected void Page_Load(object sender, EventArgs e)
         {
             Encoding gb2312 = Encoding.GetEncoding("gb2312");
@@ -35,10 +38,28 @@ namespace Logistics
                 emsList = emsKindService.getAll();
                 icid = cookiesUtil.getCookie("GInfo_999_Vali"); 
  
-                int.TryParse(Request.QueryString["page"], out page); 
+                int.TryParse(Request.QueryString["page"], out page);
+                if (page <= 0) {
+                    page = 1;
+                }
 
-                var cemskind =Request.QueryString["cemskind"];
-                Response.Write(cemskind);
+                int.TryParse(Request.QueryString["state"], out state);
+                if (state >= 0)
+                {
+                    par += "&state=" + state;
+                }
+                 
+                int.TryParse(Request.QueryString["pageSize"], out pageSize);
+                if (pageSize <= 0)
+                {
+                    pageSize = 100;
+                    par += "&pageSize=" + pageSize;
+                }
+                else {
+                    par += "&pageSize=" + pageSize;
+                }
+
+                var cemskind =Request.QueryString["cemskind"]; 
                 if (!string.IsNullOrEmpty(cemskind))
                 {
                     par += "&cemskind=" + cemskind;
@@ -68,13 +89,14 @@ namespace Logistics
                     par += "&edate=" + edate;
                 }
                 
-                list = recPreInputService.GetPage(page, 100, icid, 0, cemskind, cnum, cdes, cmark, bdate, edate);
 
-                total = recPreInputService.getTotal(icid, 0, cemskind, cnum, cdes, cmark, bdate, edate);
+                list = recPreInputService.GetPage(page, pageSize, icid, 0, cemskind, cnum, cdes, cmark, bdate, edate,state);
 
-                pageCount = recPreInputService.getPageCount(icid, 0, 100, cemskind, cnum, cdes, cmark, bdate, edate);
+                total = recPreInputService.getTotal(icid, 0, cemskind, cnum, cdes, cmark, bdate, edate, state);
 
-                rowCount = recPreInputService.getRowCount(icid, 0, cemskind, cnum, cdes, cmark, bdate, edate);
+                pageCount = recPreInputService.getPageCount(icid, 0, pageSize, cemskind, cnum, cdes, cmark, bdate, edate, state);
+
+                rowCount = recPreInputService.getRowCount(icid, 0, cemskind, cnum, cdes, cmark, bdate, edate, state);
             }
         }
         

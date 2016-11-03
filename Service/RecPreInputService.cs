@@ -13,25 +13,26 @@ namespace Service
         private RecPreInputDao recPreInputDao = new RecPreInputDao();
 
         //获取记录
-        public List<RecPreInputEntity> GetPage(int page, int pageSize, int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate)
+        public List<RecPreInputEntity> GetPage(int page, int pageSize, int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate,int state)
         {
             if (page == 0)
             {
                 page = 1;
             }
-            return recPreInputDao.GetPage(page, pageSize, icid, irid, cemskind, cnum, cdes, cmark, bdate, edate);
+            return recPreInputDao.GetPage(page, pageSize, icid, irid, cemskind, cnum, cdes, cmark, bdate, edate,state);
         }
 
         //获取总重量
-        public decimal getTotal(int icid, int irid ,string cemskind, string cnum, string cdes, string cmark, string bdate, string edate) {
-            return recPreInputDao.getTotal(icid, irid, cemskind, cnum, cdes, cmark, bdate, edate);
+        public decimal getTotal(int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate, int state)
+        {
+            return recPreInputDao.getTotal(icid, irid, cemskind, cnum, cdes, cmark, bdate, edate,state);
         }
 
         //获取总页数
-        public int getPageCount(int icid, int irid, int pageSize, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate)
+        public int getPageCount(int icid, int irid, int pageSize, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate, int state)
         {
 
-            var total = recPreInputDao.getTotalRow(icid, irid, cemskind, cnum, cdes, cmark, bdate, edate);
+            var total = recPreInputDao.getTotalRow(icid, irid, cemskind, cnum, cdes, cmark, bdate, edate,state);
 
             var page = 0;
 
@@ -49,10 +50,10 @@ namespace Service
         }
 
         //获取总数量
-        public int getRowCount(int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate)
+        public int getRowCount(int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate, int state)
         {
 
-            return recPreInputDao.getTotalRow(icid, irid, cemskind, cnum, cdes, cmark, bdate, edate);
+            return recPreInputDao.getTotalRow(icid, irid, cemskind, cnum, cdes, cmark, bdate, edate,state);
         }
 
         public RecPreInputEntity findById(int iid, int icid, int irid) {

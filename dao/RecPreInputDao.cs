@@ -12,7 +12,7 @@ namespace Dao
     {
         private HelpSQL helpSql = new HelpSQL("sqlconn");
 
-        public List<RecPreInputEntity> GetPage(int page, int pageSize, int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate)
+        public List<RecPreInputEntity> GetPage(int page, int pageSize, int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate,int state)
         {
 
             List<RecPreInputEntity> list = new List<RecPreInputEntity>();
@@ -41,6 +41,15 @@ namespace Dao
             {
                 sb.Append(" AND cnum=@cnum");
                 par.Add(new SqlParameter("@cnum", cnum));
+            }
+            //快递状体
+            if (state == 1) {
+                sb.Append(" AND state=0");
+            }
+            //快递状体
+            if (state == 2)
+            {
+                sb.Append(" AND state=1");
             }
             if (!string.IsNullOrEmpty(cdes))
             {
@@ -124,7 +133,7 @@ namespace Dao
             return list;
         }
 
-        public decimal getTotal(int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate)
+        public decimal getTotal(int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate, int state)
         {
             List<SqlParameter> par = new List<SqlParameter>();
             decimal total = 0M;
@@ -143,6 +152,16 @@ namespace Dao
             {
                 sb.Append(" AND cnum=@cnum");
                 par.Add(new SqlParameter("@cnum", cnum));
+            }
+            //快递状体
+            if (state == 1)
+            {
+                sb.Append(" AND state=0");
+            }
+            //快递状体
+            if (state == 2)
+            {
+                sb.Append(" AND state=1");
             }
             if (!string.IsNullOrEmpty(cdes))
             {
@@ -178,7 +197,7 @@ namespace Dao
             return total;
         }
 
-        public int getTotalRow(int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate)
+        public int getTotalRow(int icid, int irid, string cemskind, string cnum, string cdes, string cmark, string bdate, string edate,int state)
         {
             List<SqlParameter> par = new List<SqlParameter>();
 
@@ -197,6 +216,18 @@ namespace Dao
                 sb.Append(" AND cnum=@cnum");
                 par.Add(new SqlParameter("@cnum", cnum));
             }
+
+            //快递状体
+            if (state == 1)
+            {
+                sb.Append(" AND state=0");
+            }
+            //快递状体
+            if (state == 2)
+            {
+                sb.Append(" AND state=1");
+            }
+
             if (!string.IsNullOrEmpty(cdes))
             {
                 sb.Append(" AND cdes=@cdes");

@@ -514,6 +514,13 @@ input {
              <input name='bdate' type='text' class="Wdate" id="cdateb" onclick="WdatePicker()" size="14" />
 &nbsp;至
 <input name='edate' type='text'  class="Wdate" id="cdateb" onclick="WdatePicker()" size="14" />
+            <input type="hidden" name="pageSize" value="<%=pageSize %>" />
+            运单状态：
+           <select name="state">
+               <option value="0">全部</option>
+               <option value="1" <%if(state==1){ %> selected="selected" <%} %>>未获取</option>
+               <option value="2" <%if(state==2){ %> selected="selected" <%} %>>已获取</option>
+           </select>
 	    <button type='submit'  class='btn btn-primary'>查询</button></td>
 	    </tr>
     </table> 
@@ -588,7 +595,7 @@ input {
                  i= i * 10; 
               } %>
             <%foreach(var d in list){ %>
-            <%i++; %>
+            
             <tr align="center" class="recPreInputListEven" id="tr_11085">
         <td><input type="checkbox" name="iid" value="<%=d.iid %>"></td>
         <td align="center"><%=i %></td>
@@ -606,6 +613,7 @@ input {
         <td align="center">0.00</td>
         <td align="left"> <a href="javascript:prtOne(<%=d.iid %>);"><img src="/EMS_MODEL/pic/login_13.jpg" width="22" height="19"></a></td>
       </tr>
+            <%i++; %>
             <%} %>
       <tr align='center' class='recPreInputListTotal'>
         <td align='center'>&nbsp;</td>
@@ -633,6 +641,15 @@ input {
          <a class="page" href="?page=<%=page>1?page-1:1 %><%=par %>">上一页</a>
          <a class="page" href="?page=<%=page>=pageCount?pageCount:page+1 %><%=par %>">下一页</a>
          <a class="page" href="?page=<%=pageCount%><%=par %>">末页</a>
+        <select id="pageSize">
+            <% foreach(var item in pageSizeList){ %>
+            <%if(pageSize==item){ %>
+              <option value="<%=item %>" selected="selected" ><%=item %>条/页</option> 
+             <%}else{ %>
+            <option value="<%=item %>" ><%=item %>条/页</option> 
+            <%} %>
+            <%} %>
+        </select>
     </td>
   </tr>
   <tr align="left">
@@ -644,6 +661,12 @@ input {
      </form>
 <script type="text/javascript">
     QueryEmskind();
+    $(function () {
+        $("#pageSize").change(function () {
+            var pageSize = $(this).val();
+            location.href = "/Logistic.aspx?pageSize=" + pageSize;
+        });
+    })
 </script>
  
 </body>
