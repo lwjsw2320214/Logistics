@@ -502,18 +502,18 @@ input {
 	  <tr>
 	    <td width="837" height="50" align="left">快递类别：<span id="oemskind"></span> 
           运 单 号：
-          <input name="cnum" type="text" class="myinput" value="" />
+          <input name="cnum" type="text" class="myinput" value="<%=cnum %>" />
 	       
 	       　目 的 地：
-	         <input name="cdes" type="text" class="myinput1" value="" />
+	         <input name="cdes" type="text" class="myinput1" value="<%=cdes %>" />
 	         　
 	         　标 签：
-	         <input name="cmark" type="text" class="myinput1" value="" />
+	         <input name="cmark" type="text" class="myinput1" value="<%=cmark %>" />
 	         　
 	         录入日期：
-             <input name='bdate' type='text' class="Wdate" id="cdateb" onclick="WdatePicker()" size="14" />
+             <input name='bdate' type='text' class="Wdate" id="cdateb" onclick="WdatePicker()" size="14" value="<%= bdate%>" />
 &nbsp;至
-<input name='edate' type='text'  class="Wdate" id="cdateb" onclick="WdatePicker()" size="14" />
+<input name='edate' type='text'  class="Wdate" id="cdateb" onclick="WdatePicker()" size="14" value="<%=edate %>" />
             <input type="hidden" name="pageSize" value="<%=pageSize %>" />
             运单状态：
            <select name="state">
@@ -591,8 +591,8 @@ input {
         <td align="left">操作</td>
       </tr>
             <%var i = page;%>
-            <%if (i > 1){
-                 i= i * 10+1; 
+            <%if ((i-1) > 1){
+                 i= (i-1) * pageSize+1; 
               } %>
             <%foreach(var d in list){ %>
             
@@ -654,7 +654,7 @@ input {
   </tr>
   <tr align="left">
     <td height="60">
-    <button  type="button" class='btn btn-primary' value="下载数据"  onclick="window.open('/cgi-bin/GInfo.dll?RecPreInputListFile&w=au-express&cnum=&cdes=&bdate=&edate=&cemskind=&cmark=&creserve=&creceiver=&cphone=','_blank')">保存列表数据为EXCEL表格</button>	</td>
+    <button  type="button" class='btn btn-primary' value="下载数据"  onclick="window.open('/cgi-bin/GInfo.dll?RecPreInputListFile&w=au-express&cnum=<%=cnum%>&cdes=<%=cdes %>&bdate=<%=bdate %>&edate=<%=edate %>&cemskind=<%=cemskind %>&cmark=<%=cmark %>&creserve=&creceiver=&cphone=','_blank')">保存列表数据为EXCEL表格</button>	</td>
   </tr>
 </table>
 <input TYPE='hidden' NAME='xxx' VALUE='xxx'> 

@@ -28,6 +28,12 @@ namespace Logistics
         protected int pageSize = 0;
         protected string par = "";
         protected int state = 0;
+        protected string cemskind = string.Empty;
+        protected string cnum = string.Empty;
+        protected string cdes = string.Empty;
+        protected string cmark = string.Empty;
+        protected string bdate = string.Empty;
+        protected string edate = string.Empty;
         protected int[] pageSizeList = new int[] { 100, 200, 500, 1000 };
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,31 +65,31 @@ namespace Logistics
                     par += "&pageSize=" + pageSize;
                 }
 
-                var cemskind =Request.QueryString["cemskind"]; 
+                cemskind =Request.QueryString["cemskind"]; 
                 if (!string.IsNullOrEmpty(cemskind))
                 {
                     par += "&cemskind=" + cemskind;
                 }
-                var cnum = Request.QueryString ["cnum"];
+                cnum = Request.QueryString ["cnum"];
                 if (!string.IsNullOrEmpty(cnum)) {
                     par += "&cnum=" + cnum;
                 }
-                var cdes = Request.QueryString["cdes"];
+                cdes = Request.QueryString["cdes"];
                 if (!string.IsNullOrEmpty(cdes))
                 {
                     par += "&cdes=" + cdes;
                 }
-                var cmark = Request.QueryString["cmark"];
+                cmark = Request.QueryString["cmark"];
                 if (!string.IsNullOrEmpty(cmark))
                 {
                     par += "&cmark=" + cmark;
                 }
-                var bdate = Request.QueryString["bdate"];
+                bdate = Request.QueryString["bdate"];
                 if (!string.IsNullOrEmpty(bdate))
                 {
                     par += "&bdate=" + bdate;
                 }
-                var edate = Request.QueryString["edate"];
+                edate = Request.QueryString["edate"];
                 if (!string.IsNullOrEmpty(edate))
                 {
                     par += "&edate=" + edate;
