@@ -13,22 +13,22 @@
       <publishTime>10/24/2016 11:47:22</publishTime>
     </File>
     <File Include="bin/common.dll">
-      <publishTime>11/03/2016 11:46:18</publishTime>
+      <publishTime>11/03/2016 12:35:25</publishTime>
     </File>
     <File Include="bin/Dao.dll">
-      <publishTime>11/03/2016 11:46:18</publishTime>
+      <publishTime>11/03/2016 12:35:25</publishTime>
     </File>
     <File Include="bin/DBUtility.dll">
-      <publishTime>11/03/2016 11:46:18</publishTime>
+      <publishTime>11/03/2016 12:35:25</publishTime>
     </File>
     <File Include="bin/Entity.dll">
-      <publishTime>11/03/2016 11:46:18</publishTime>
+      <publishTime>11/03/2016 12:35:25</publishTime>
     </File>
     <File Include="bin/Logistics.dll">
-      <publishTime>11/03/2016 11:46:19</publishTime>
+      <publishTime>11/03/2016 12:35:26</publishTime>
     </File>
     <File Include="bin/Service.dll">
-      <publishTime>11/03/2016 11:46:18</publishTime>
+      <publishTime>11/03/2016 12:35:25</publishTime>
     </File>
     <File Include="CheckArea.aspx">
       <publishTime>10/24/2016 11:47:22</publishTime>
@@ -427,7 +427,7 @@
       <publishTime>10/24/2016 11:47:22</publishTime>
     </File>
     <File Include="Logistic.aspx">
-      <publishTime>11/03/2016 11:47:34</publishTime>
+      <publishTime>11/03/2016 12:36:23</publishTime>
     </File>
     <File Include="SettingPassWord.aspx">
       <publishTime>10/24/2016 11:47:22</publishTime>
@@ -436,7 +436,7 @@
       <publishTime>10/24/2016 14:36:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/03/2016 11:47:37</publishTime>
+      <publishTime>11/03/2016 12:36:28</publishTime>
     </File>
     <File Include="WebApi.aspx">
       <publishTime>10/24/2016 11:47:22</publishTime>

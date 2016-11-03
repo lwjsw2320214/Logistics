@@ -68,8 +68,8 @@ namespace Dao
             }
             if (!string.IsNullOrEmpty(edate))
             {
-                sb.Append(" AND ddate<@ddate");
-                par.Add(new SqlParameter("@ddate", DateTime.Parse(edate).AddDays(1)));
+                sb.Append(" AND ddate<@ddate2");
+                par.Add(new SqlParameter("@ddate2", DateTime.Parse(edate).AddDays(1)));
             }
             sb.Append(") as a where rowNumber between @startNumber and @endNumber"); 
 
@@ -180,8 +180,8 @@ namespace Dao
             }
             if (!string.IsNullOrEmpty(edate))
             {
-                sb.Append(" AND ddate<@ddate");
-                par.Add(new SqlParameter("@ddate", DateTime.Parse(edate).AddDays(1)));
+                sb.Append(" AND ddate<@ddate2");
+                par.Add(new SqlParameter("@ddate2", DateTime.Parse(edate).AddDays(1)));
             }
 
             par.Add(new SqlParameter("@icid", icid));
@@ -245,8 +245,8 @@ namespace Dao
             }
             if (!string.IsNullOrEmpty(edate))
             {
-                sb.Append(" AND ddate<@ddate");
-                par.Add(new SqlParameter("@ddate", DateTime.Parse(edate).AddDays(1)));
+                sb.Append(" AND ddate<@ddate2");
+                par.Add(new SqlParameter("@ddate2", DateTime.Parse(edate).AddDays(1)));
             }
 
             var total=0;
