@@ -443,8 +443,7 @@ input {
                 str += "</select>";  
                 var o = document.getElementById("oemskind"); 
                 if (o == null) return;
-                o.innerHTML = str; 
-                FillEmsModel();
+                o.innerHTML = str;  
                 return;
             }
         }
@@ -482,7 +481,7 @@ input {
 </script>
 </head>
 
-<body>
+<body onload="FillModel();">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align='left'>&nbsp;</td>
