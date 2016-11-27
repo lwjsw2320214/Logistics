@@ -13,6 +13,9 @@ namespace Logistics
     public partial class delete : System.Web.UI.Page
     {
 
+        /// <summary>
+        /// 动态new
+        /// </summary>
         private CourierNumberService courierNumberService = new CourierNumberService();
         protected CookiesUtil cookiesUtil = new CookiesUtil(); 
         protected void Page_Load(object sender, EventArgs e)
