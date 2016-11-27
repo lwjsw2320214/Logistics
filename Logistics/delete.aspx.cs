@@ -14,7 +14,7 @@ namespace Logistics
     {
 
         /// <summary>
-        /// 动态new 一个东西出来
+        /// 
         /// </summary>
         private CourierNumberService courierNumberService = new CourierNumberService();
         protected CookiesUtil cookiesUtil = new CookiesUtil(); 
