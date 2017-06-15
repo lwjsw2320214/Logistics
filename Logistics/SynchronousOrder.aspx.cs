@@ -98,6 +98,10 @@ namespace Logistics
                             {
                                i= getYt(xmlDocument, r, i, extype);
                             }
+                            else if ("百世快递".Equals(extype))
+                            {
+                                i = getBill(xmlDocument, r, i, extype);
+                            }
                             else if (!string.IsNullOrEmpty(extype))
                             {
                                 //循环获取快递号
@@ -109,7 +113,7 @@ namespace Logistics
                                     var orderid = r.cnum;
                                     var mailno = courierNumber.courierNumber;
                                     var destcode = r.cdes;
-                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype, r.iid.Value,r.fweight.Value);
+                                    var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype, r.iid.Value, r.fweight.Value);
                                     var ncount = courierNumberService.update(courierNumber.id, userName);
                                     if (ncount > 0)
                                     {
@@ -152,6 +156,44 @@ namespace Logistics
                 return "";
             }
         }
+
+
+        public int getBill(XmlDocument xmlDocument, RecPreInputEntity r, int i, string extype) {
+
+            BillParameter billParameter = new BillParameter();
+            var p = billParameter.getParameter(r);
+            LogWrite.WriteLog("BS", p);
+            BillNetWorkConnect connect = new BillNetWorkConnect();
+            var c = connect.PostConnect(p);
+            LogWrite.WriteLog("BS", c);
+            xmlDocument.LoadXml(c);
+            XmlNode node = xmlDocument.SelectSingleNode("/PrintResponse/result");
+            var head = node.InnerText;
+            if (head == "SUCCESS")
+            {
+                //原始订单
+                XmlNode orderXml = xmlDocument.SelectSingleNode("/PrintResponse/EDIPrintDetailList/txLogisticID");
+                var orderid = orderXml.InnerText;
+                //圆通快递号
+                var mailno = xmlDocument.SelectSingleNode("/PrintResponse/EDIPrintDetailList/mailNo").InnerText;
+                //大头笔
+                var destcode = xmlDocument.SelectSingleNode("/PrintResponse/EDIPrintDetailList/markDestination").InnerText;
+
+                var b = courierNumberService.getRowCount(mailno, extype);
+                if (b > 0)
+                {
+                    return getYt(xmlDocument, r, i, extype);
+                }
+                //更新快递单
+                var count = recPreInputService.UpdateOrder(orderid, mailno, destcode, extype, r.iid.Value, r.fweight.Value);
+                if (count > 0)
+                {
+                    i++;
+                }
+            }
+            return i; 
+        }
+
 
         public int getYt(XmlDocument xmlDocument, RecPreInputEntity r, int i, string extype)
         {

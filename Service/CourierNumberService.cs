@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Entity;
 using Dao;
+using System.Transactions;
 
 namespace Service
 {
@@ -24,7 +25,7 @@ namespace Service
         {
             return courierNumberDao.getPageRow(page, pageSize, state, expressType,updateUser);
         }
-
+         
         /// <summary>
         /// 得到总页数
         /// </summary>
@@ -111,5 +112,6 @@ namespace Service
 
             return courierNumberDao.getRowCount(number, expressType);
         }
+ 
     }
 }

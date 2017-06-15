@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillNetWorkConnect.cs" />
+    <Compile Include="BillParameter.cs" />
     <Compile Include="CookiesUtil.cs" />
     <Compile Include="LogisticsEncryption.cs" />
     <Compile Include="LogWrite.cs" />
